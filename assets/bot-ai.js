@@ -13,7 +13,7 @@ try {
   messagingSenderId: "882306860348",
   appId: "1:882306860348:web:c540fd2f313206cab6ca39"
 }, 'ohana-ai');
-  initializeAppCheck(aiApp, { provider: new ReCaptchaEnterpriseProvider('6LfLJwcuAAAAAJk3CSivW9C-9E0Q-Cexl9wwibrv'), isTokenAutoRefreshEnabled: true });
+  initializeAppCheck(aiApp, { provider: new ReCaptchaEnterpriseProvider('6Ld5owYuAAAAANYK0NJy8RSdjmG1lW8A8bnTVdzW'), isTokenAutoRefreshEnabled: true });
   var aiDb = getFirestore(aiApp);
   var ai = getAI(aiApp, { backend: new GoogleAIBackend() });
   var model = getGenerativeModel(ai, { model: 'gemini-3.5-flash-lite', systemInstruction: SYS });
