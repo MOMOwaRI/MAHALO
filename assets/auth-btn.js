@@ -31,7 +31,13 @@
     else wrapEl.insertBefore(rowEl, wrapEl.firstChild);
     btn.addEventListener('click', function(){
       var u = firebase.auth().currentUser;
-      if(!u){ location.href = memberKnown() ? LOGIN_URL + '#login' : LOGIN_URL; }
+      if(!u){
+        if(/mypage\.html$/.test(location.pathname)){
+          if(window.__mahaloLogin){ window.__mahaloLogin(); }
+          else { var gl = document.getElementById('google-login'); if(gl){ gl.scrollIntoView({behavior:'smooth', block:'center'}); gl.click(); } }
+        }
+        else location.href = memberKnown() ? LOGIN_URL + '#login' : LOGIN_URL;
+      }
       else if(isOwner(u) && window.__toggleSiteEdit){ window.__toggleSiteEdit(); }
       else if(isOwner(u) && DOC){ location.href = 'member.html?id=' + DOC + '&edit=1'; }
       else location.href = 'mypage.html';

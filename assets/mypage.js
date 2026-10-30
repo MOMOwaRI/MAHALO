@@ -248,24 +248,43 @@
     initForm();
     var sb = $('sample-btn'); if(sb) sb.addEventListener('click', enterSample);
     var gb = $('sample-btn-gate'); if(gb) gb.addEventListener('click', enterSample);
+    function loginMsg(txt){ var m = $('login-msg'); if(m){ m.textContent = txt; m.style.display = txt ? '' : 'none'; } }
+    function doLogin(){
+      if(!window.firebase || !firebase.auth){ loginMsg('読み込みが終わっていません。少し待ってからもう一度押してください。'); return; }
+      try{ if(!firebase.apps.length) initFb(); }catch(e){}
+      loginMsg('');
+      var provider = new firebase.auth.GoogleAuthProvider();
+      var ua = navigator.userAgent || '';
+      var useRedirect = /iPhone|iPad|iPod|Android/.test(ua);
+      if(useRedirect){
+        firebase.auth().signInWithRedirect(provider).catch(function(){ loginMsg('ログイン画面を開けませんでした。通信環境をご確認のうえ、もう一度お試しください。'); });
+      }else{
+        firebase.auth().signInWithPopup(provider).catch(function(err){
+          if(err && (err.code === 'auth/popup-blocked' || err.code === 'auth/operation-not-supported-in-this-environment' || err.code === 'auth/cancelled-popup-request')){
+            firebase.auth().signInWithRedirect(provider);
+          }else if(err && err.code !== 'auth/popup-closed-by-user'){
+            loginMsg('ログインできませんでした。もう一度お試しください。');
+          }
+        });
+      }
+    }
+    window.__mahaloLogin = doLogin;
     var loginBtn = $('google-login');
-    if(loginBtn) loginBtn.addEventListener('click', function(){
-      try{
-        var provider = new firebase.auth.GoogleAuthProvider();
-        firebase.auth().signInWithPopup(provider).catch(function(){ location.href = 'https://momowari.github.io/OHANA-share/login.html'; });
-      }catch(e){ location.href = 'https://momowari.github.io/OHANA-share/login.html'; }
-    });
+    if(loginBtn) loginBtn.addEventListener('click', doLogin);
     var lo = $('logout-btn');
     if(lo) lo.addEventListener('click', function(){ if(window.firebase && firebase.auth) firebase.auth().signOut().then(function(){ location.reload(); }); });
     if(!window.firebase || !firebase.auth){ enterSample(); return; }
-    try{ if(!firebase.apps.length) firebase.initializeApp({
+    function initFb(){ firebase.initializeApp({
       apiKey: "AIzaSyAdq6e71I-1XsBHOsMc4Q_djsHlecqQKcQ",
       authDomain: "mahalo-12007.firebaseapp.com",
       projectId: "mahalo-12007",
       storageBucket: "mahalo-12007.firebasestorage.app",
       messagingSenderId: "882306860348",
       appId: "1:882306860348:web:c540fd2f313206cab6ca39"
-    }); }catch(e){}
+    }); }
+    try{ if(!firebase.apps.length) initFb(); }catch(e){}
+    try{ firebase.auth().getRedirectResult().catch(function(){ loginMsg('ログインが完了しませんでした。もう一度お試しください。'); }); }catch(e){}
+    if(location.hash === '#login'){ var gl = $('mypage-gate'); if(gl) setTimeout(function(){ gl.scrollIntoView({behavior:'smooth', block:'start'}); }, 300); }
     firebase.auth().onAuthStateChanged(function(u){
       if(!u){ showGate(); return; }
       state.user = u; state.sample = false;
