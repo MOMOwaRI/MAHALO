@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://momowari.github.io/MAHALO/sitemap.xml

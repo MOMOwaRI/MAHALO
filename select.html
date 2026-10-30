@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MAHALOセレクト商品｜hair ID salon MAHALO</title>
+<meta name="description" content="hair ID salon MAHALOの取り扱い商品（ラッシュアディクト・ReFa・オージュア・WigMAHALO）と技術（煌水・ベルジュバンス・抗アレルギーカラー）の紹介ページです。" />
+<link rel="icon" type="image/png" href="favicon.png" />
+<link rel="icon" href="favicon.ico" sizes="any" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="MAHALOセレクト商品｜hair ID salon MAHALO" />
+<meta property="og:description" content="hair ID salon MAHALOの取り扱い商品（ラッシュアディクト・ReFa・オージュア・WigMAHALO）と技術（煌水・ベルジュバンス・抗アレルギーカラー）の紹介ページです。" />
+<meta property="og:url" content="https://momowari.github.io/MAHALO/select.html" />
+<meta property="og:site_name" content="hair ID salon MAHALO" />
+<!-- GA4：このサイト専用の測定IDが未確定のため、タグは未設置。設置する場合はこの位置に
+     Eyes (G-1Z256HD5XM) とは別の、新規ページ群専用プロパティの gtag を入れること。 -->
+<link rel="stylesheet" href="assets/style.css" />
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script>window.__mahaloPageKey = 'mahalo-select'; window.__botSYS = "あなたは、愛媛県松山市の美容室「hair ID salon MAHALO」と同じビルにあるお店全体のサイト案内役です。名前はありません。名前を聞かれたら「名前はなくて、MAHALOの案内役です」と答えてください。質問には親しみやすく、短く（1〜3文）答えてください。\n\n・嘘をつかないでください。下の知識にないことは作り話をせず、正直に「分からない」と言って、公式サイト（https://www.hair-mahalo.com/）や店舗のLINEを案内してください。\n・料金・日時・場所は、知識にあるものだけをそのまま正確に伝えてください。推測で数字を言わないでください。商品の価格は「店頭でご確認ください」と案内してください。\n・予約の空き状況は絶対に断定しないでください。\n・個人情報は答えないでください（お店の公開情報は除きます）。医療の判断はしないでください。\n・関係のない質問には、「お店のことなら答えられます」とやんわり返してください。\n\n・hair ID salon MAHALO（2階の美容室）：9:00〜18:00受付、定休日は月曜、電話089-934-1455。街の中の森の美容室。抗アレルギーカラー、香草カラー、煌水（キラ水）、ベル・ジュバンス弱酸性美容法、オージュア、髪質改善トリートメント、ヘッドスパ、WigMAHALO（ウィッグの相談）があります。\n・elua Mahalo（1階の女性限定美容室）：完全予約制・マンツーマン。水〜金10:00〜17:00、土日祝9:00〜18:00、定休日は月・火。着付けもできます。「elua」はハワイ語で「2」でもありますが、お店の意味は「さらに、もっと」です。\n・Eyes MAHALO（1階のまつげパーマ専門店）：まつげパーマ歴15年以上。遠赤外線のキラ水とアイマスクを使う施術です（温める施術ではありません）。根元からしっかり立ち上げます。基本メニュー4,000円、根元メニュー3,000円。対応時間は7:30〜19:30（月〜土）、日・祝は要相談。予約と空き確認は公式LINEが確実です：https://lin.ee/q8vBvt1 。電話番号は案内しないでください。\n・雑貨屋 Lea Mahalo（1階）：実店舗は来店予約制です。メルカリでも販売していて、購入の前には在庫確認のコメントが必要です。\n・場所：松山市味酒町3-2-29 MAHALOビル。古町駅から徒歩約3分。駐車場3台。\n・このサイトには、MAHALOセレクト商品のページ、髪質診断のページ、紹介動画のページ、マイページ、MAHALOコミュニティのページがあります。髪質診断の結果は、ログインするとマイページに保存されます。カルテや成績表などの個人情報は、本人のログインでのみ表示され、この案内では答えられません。\n\n・このページは、MAHALOセレクト商品のページです。商品の価格は、どれも「店頭でご確認ください」と案内してください。\n";</script>
+<script src="assets/auth-btn.js"></script>
+<script src="assets/site-edit.js"></script>
+</head>
+<body>
+<div class="wrap">
+<header class="site">
+<p class="en">Hair ID Salon Mahalo</p>
+<h1>MAHALOセレクト商品</h1>
+<p class="sub">松山市味酒町3-2-29 MAHALOビル</p>
+</header>
+<nav class="pagenav"><a href="index.html">入口・リンク集</a>
+<a href="select.html" class="now">セレクト商品</a>
+<a href="diagnosis.html">髪質診断</a>
+<a href="movies.html">紹介動画</a>
+<a href="mypage.html">マイページ</a>
+<a href="community.html">コミュニティ</a></nav>
+
+<section>
+<p class="en">Select Items</p>
+<h2>MAHALOセレクト商品</h2>
+<p class="lead">お店で取り扱っている商品と、大事にしている技術の紹介です。商品の実物写真は、スタッフが「写真・資料受付箱」に投げた写真が届き次第、順に差し替えます。いまは店内の写真で代用し、「商品写真は準備中」と明記しています。メーカー公式画像の無断転載はしていません。</p>
+<h2 style="margin-top:34px">取り扱い商品</h2>
+<div class="cards">
+<div class="card" id="lashaddict"><img src="assets/img/eyes-tech.jpg" alt="ラッシュアディクト（店内の写真です。商品の実物写真は準備中）" /><div class="cbody"><p class="en">Lashaddict</p><h3>ラッシュアディクト</h3><p>まつげ美容液。Eyes MAHALOでも取り扱っています。取り扱い店として、公式サイトのお知らせにも掲載されています。ネットの価格ではなく、店頭の現行価格でご案内します。</p><span class="badge photo">商品写真は準備中</span><div class="price">価格は店頭でご確認ください</div><p style="margin-top:10px"><a href="https://soaddicted.jp/item_category/lashaddict/" target="_blank" rel="noopener">メーカー公式サイトを見る</a></p></div></div><div class="card" id="refa"><img src="assets/img/decor.jpg" alt="ReFa（リファ）（店内の写真です。商品の実物写真は準備中）" /><div class="cbody"><p class="en">ReFa</p><h3>ReFa（リファ）</h3><p>ドライヤーやヘアアイロン、ブラシなどの取り扱い店です。置いている機種は店頭でご確認ください。</p><span class="badge photo">商品写真は準備中</span><div class="price">価格は店頭でご確認ください</div><p style="margin-top:10px"><a href="https://www.refa.net/item/" target="_blank" rel="noopener">メーカー公式サイトを見る</a></p></div></div><div class="card" id="aujua"><img src="assets/img/salon-film2.jpg" alt="オージュア ホームケア（店内の写真です。商品の実物写真は準備中）" /><div class="cbody"><p class="en">Aujua</p><h3>オージュア ホームケア</h3><p>ミルボンのオージュアは、お悩みに合わせてラインを選べるヘアケアです。サロンのトリートメントと合わせて、ホームケアの提案もできます。</p><span class="badge photo">商品写真は準備中</span><div class="price">価格は店頭でご確認ください</div><p style="margin-top:10px"><a href="https://www.aujua.com/" target="_blank" rel="noopener">メーカー公式サイトを見る</a></p></div></div><div class="card" id="wig"><img src="assets/img/salon-band2.jpg" alt="WigMAHALO（ウィッグのご相談）（店内の写真です。商品の実物写真は準備中）" /><div class="cbody"><p class="en">Wig Mahalo</p><h3>WigMAHALO（ウィッグのご相談）</h3><p>ウィッグの相談窓口「WigMAHALO」を開設しました。詳しい内容は、お店でご相談ください。</p><span class="badge photo">商品写真は準備中</span><div class="price">価格は店頭でご確認ください</div></div></div>
+</div>
+</section>
+<div class="band"></div>
+<section>
+<p class="en">Technology &amp; Menu</p>
+<h2>技術とメニュー</h2>
+<div class="cards">
+<div class="card"><img src="assets/img/salon-main.jpg" alt="煌水（キラ水）（店内の写真です）" /><div class="cbody"><p class="en">Kirasui</p><h3>煌水（キラ水）</h3><p>テラヘルツ機能水「煌水」を使った施術です。MAHALO（2F）と1Fのお店で導入しています。Eyes MAHALOでは、遠赤外線のキラ水とアイマスクを使います（温める施術ではありません）。</p></div></div><div class="card"><img src="assets/img/salon-film3.jpg" alt="ベル・ジュバンス弱酸性美容法（店内の写真です）" /><div class="cbody"><p class="en">Belle Jouvence</p><h3>ベル・ジュバンス弱酸性美容法</h3><p>世界初の弱酸性パーマを生んだ、弱酸性美容法の技術です。弱酸性パーマやヘッドスパに使っています。製品は美容室専売で、通販はありません。</p></div></div><div class="card"><img src="assets/img/salon-chairs.jpg" alt="抗アレルギーカラー（店内の写真です）" /><div class="cbody"><p class="en">Allergy-Free Color</p><h3>抗アレルギーカラー</h3><p>「アレルギーでカラーを諦めないで」。カラーの刺激が気になる方のための、MAHALOの特徴のひとつです。</p></div></div><div class="card"><img src="assets/img/salon-film1.jpg" alt="香草カラー（店内の写真です）" /><div class="cbody"><p class="en">Herbal Color</p><h3>香草カラー</h3><p>MAHALO（2F）とelua Mahalo（1F）のカラーメニューです。髪と頭皮への負担に配慮したい方に。</p></div></div><div class="card"><img src="assets/img/salon-film4.jpg" alt="髪質改善トリートメント（店内の写真です）" /><div class="cbody"><p class="en">Hair Quality</p><h3>髪質改善トリートメント</h3><p>新しく導入したトリートメントです。うねりや広がり、手触りが気になる方に。詳しい内容は店頭でご相談ください。</p></div></div><div class="card"><img src="assets/img/salon-film5.jpg" alt="ヘッドスパ（店内の写真です）" /><div class="cbody"><p class="en">Head Spa</p><h3>ヘッドスパ</h3><p>煌水・ベル・ジュバンス・オージュアを使ったヘッドスパが、2Fと1Fにあります。頭皮のコンディションを整えたい方に。</p></div></div>
+</div>
+<p class="note" style="margin-top:14px">※ 料金は公式サイトと店頭でご確認ください。このページでは、確認できていない価格は載せていません。</p>
+</section>
+<div class="band lea"></div>
+<section>
+<p class="en">Beauty Select by Lea Mahalo</p>
+<h2 class="lea">美容師セレクト（Lea Mahalo）</h2>
+<p class="lead">同じビルの雑貨屋 Lea Mahalo には、美容室MAHALOの視点で選んだ美容アイテムのページもあります。</p>
+<div class="cards">
+<a class="card" href="https://momowari.github.io/Lea-Mahalo/biyoshi.html" target="_blank" rel="noopener"><img src="assets/img/zakka-4.jpg" alt="美容師セレクト" /><div class="cbody"><p class="en">Biyoshi Select</p><h3>美容師セレクト｜Lea Mahalo</h3><p>美容アイテムの一覧ページへ。ご購入はメルカリで、購入前に在庫確認のコメントをお願いします。</p></div></a>
+<a class="card" href="diagnosis.html"><img src="assets/img/salon-film6.jpg" alt="髪質診断" /><div class="cbody"><p class="en">Hair Diagnosis</p><h3>髪質診断で選ぶ</h3><p>迷ったら、髪質診断から。あなたに合ったメニューとホームケアを提案します。</p></div></a>
+</div>
+</section>
+
+<footer>
+<p class="fname">hair ID salon MAHALO</p>
+<p>松山市味酒町3-2-29 MAHALOビル（2F 美容室／1F elua Mahalo・Eyes MAHALO・Lea Mahalo）<br />
+公式サイト：<a href="https://www.hair-mahalo.com/" target="_blank" rel="noopener">hair-mahalo.com</a></p>
+</footer>
+
+<div class="fab-stack">
+<button class="fab-bot" id="fab-bot" type="button" aria-expanded="false" aria-controls="chat-panel">MAHALOに質問する</button>
+</div>
+<div class="chat-panel" id="chat-panel" hidden>
+<div class="chat-head">
+<div>
+<div class="name">MAHALO 案内ボット</div>
+<div class="desc">よくある質問に自動で答えます。分からないことは、お店に直接聞いてください。</div>
+</div>
+<button class="chat-close" id="chat-close" type="button" aria-label="チャットを閉じる">×</button>
+</div>
+<div class="chat-log" id="chat-log">
+<div class="msg bot">こんにちは。MAHALOの案内ボットです。気になることを下のボタンから選ぶか、入力して聞いてください。</div>
+</div>
+<div class="chips" id="chips"></div>
+<p style="font-size:.75rem;color:#8a8172;margin:8px 2px 0">※ AIが答えています。間違うこともあるので、大事なこと（料金・日時など）は、公式サイトやお店でも確認してください。</p>
+<form class="chat-form" id="chat-form">
+<input id="chat-input" type="text" placeholder="質問を入力してください" autocomplete="off" />
+<button type="submit">送信</button>
+</form>
+</div>
+</div>
+<script src="assets/bot-ui.js"></script>
+<script type="module" src="assets/bot-ai.js"></script>
+</body>
+</html>

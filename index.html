@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>MAHALO 新しいページ｜hair ID salon MAHALO</title>
+<meta name="description" content="hair ID salon MAHALOの新しいページの入口。セレクト商品・髪質診断・紹介動画・マイページへのリンク集です。" />
+<link rel="icon" type="image/png" href="favicon.png" />
+<link rel="icon" href="favicon.ico" sizes="any" />
+<link rel="apple-touch-icon" href="apple-touch-icon.png" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="MAHALO 新しいページ｜hair ID salon MAHALO" />
+<meta property="og:description" content="hair ID salon MAHALOの新しいページの入口。セレクト商品・髪質診断・紹介動画・マイページへのリンク集です。" />
+<meta property="og:url" content="https://momowari.github.io/MAHALO/" />
+<meta property="og:site_name" content="hair ID salon MAHALO" />
+<!-- GA4：このサイト専用の測定IDが未確定のため、タグは未設置。設置する場合はこの位置に
+     Eyes (G-1Z256HD5XM) とは別の、新規ページ群専用プロパティの gtag を入れること。 -->
+<link rel="stylesheet" href="assets/style.css" />
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+<script>window.__mahaloPageKey = 'mahalo-top'; window.__botSYS = "あなたは、愛媛県松山市の美容室「hair ID salon MAHALO」と同じビルにあるお店全体のサイト案内役です。名前はありません。名前を聞かれたら「名前はなくて、MAHALOの案内役です」と答えてください。質問には親しみやすく、短く（1〜3文）答えてください。\n\n・嘘をつかないでください。下の知識にないことは作り話をせず、正直に「分からない」と言って、公式サイト（https://www.hair-mahalo.com/）や店舗のLINEを案内してください。\n・料金・日時・場所は、知識にあるものだけをそのまま正確に伝えてください。推測で数字を言わないでください。商品の価格は「店頭でご確認ください」と案内してください。\n・予約の空き状況は絶対に断定しないでください。\n・個人情報は答えないでください（お店の公開情報は除きます）。医療の判断はしないでください。\n・関係のない質問には、「お店のことなら答えられます」とやんわり返してください。\n\n・hair ID salon MAHALO（2階の美容室）：9:00〜18:00受付、定休日は月曜、電話089-934-1455。街の中の森の美容室。抗アレルギーカラー、香草カラー、煌水（キラ水）、ベル・ジュバンス弱酸性美容法、オージュア、髪質改善トリートメント、ヘッドスパ、WigMAHALO（ウィッグの相談）があります。\n・elua Mahalo（1階の女性限定美容室）：完全予約制・マンツーマン。水〜金10:00〜17:00、土日祝9:00〜18:00、定休日は月・火。着付けもできます。「elua」はハワイ語で「2」でもありますが、お店の意味は「さらに、もっと」です。\n・Eyes MAHALO（1階のまつげパーマ専門店）：まつげパーマ歴15年以上。遠赤外線のキラ水とアイマスクを使う施術です（温める施術ではありません）。根元からしっかり立ち上げます。基本メニュー4,000円、根元メニュー3,000円。対応時間は7:30〜19:30（月〜土）、日・祝は要相談。予約と空き確認は公式LINEが確実です：https://lin.ee/q8vBvt1 。電話番号は案内しないでください。\n・雑貨屋 Lea Mahalo（1階）：実店舗は来店予約制です。メルカリでも販売していて、購入の前には在庫確認のコメントが必要です。\n・場所：松山市味酒町3-2-29 MAHALOビル。古町駅から徒歩約3分。駐車場3台。\n・このサイトには、MAHALOセレクト商品のページ、髪質診断のページ、紹介動画のページ、マイページ、MAHALOコミュニティのページがあります。髪質診断の結果は、ログインするとマイページに保存されます。カルテや成績表などの個人情報は、本人のログインでのみ表示され、この案内では答えられません。\n\n・このページは、新しいページ群の入口（リンク集）です。\n";</script>
+<script src="assets/auth-btn.js"></script>
+<script src="assets/site-edit.js"></script>
+</head>
+<body>
+<div class="wrap">
+<header class="site">
+<p class="en">Hair ID Salon Mahalo</p>
+<h1>MAHALO 新しいページ</h1>
+<p class="sub">松山市味酒町3-2-29 MAHALOビル</p>
+</header>
+<nav class="pagenav"><a href="index.html" class="now">入口・リンク集</a>
+<a href="select.html">セレクト商品</a>
+<a href="diagnosis.html">髪質診断</a>
+<a href="movies.html">紹介動画</a>
+<a href="mypage.html">マイページ</a>
+<a href="community.html">コミュニティ</a></nav>
+
+<div class="hero"><img src="assets/img/salon-main.jpg" alt="hair ID salon MAHALO 店内" /></div>
+<p class="hero-cap">hair ID salon MAHALO（2F）</p>
+<section>
+<p class="en">New Contents</p>
+<h2>新しいページ</h2>
+<p class="lead">公式サイトから飛べる、新しいページを作っています。商品・診断・動画はここからどうぞ。</p>
+<div class="cards">
+<a class="card" href="select.html"><img src="assets/img/decor.jpg" alt="MAHALOセレクト商品" /><div class="cbody"><p class="en">Select Items</p><h3>MAHALOセレクト商品</h3><p>ラッシュアディクト、ReFa、オージュアなど、お店の取り扱い商品と技術の紹介です。</p></div></a>
+<a class="card" href="diagnosis.html"><img src="assets/img/salon-film1.jpg" alt="髪質診断" /><div class="cbody"><p class="en">Hair Diagnosis</p><h3>髪質診断</h3><p>質問に答えると、おすすめメニューとホームケアを提案します。ログインすると、結果はマイページに保存されます。</p></div></a>
+<a class="card" href="movies.html"><img src="assets/cm/mahalo-pv.webp" alt="紹介動画" /><div class="cbody"><p class="en">Movies</p><h3>紹介動画（CM）</h3><p>MAHALO・elua Mahalo・Eyes MAHALO・Lea Mahalo の紹介アニメーションをまとめました。</p></div></a>
+<a class="card" href="mypage.html"><img src="assets/img/salon-film2.jpg" alt="マイページ" /><div class="cbody"><p class="en">My Page</p><h3>マイページ</h3><p>カルテ・診断結果・提案・写真・髪の成績表が見られる、会員専用ページです。本人のログインでのみ表示されます。</p></div></a>
+<a class="card" href="community.html"><img src="assets/img/building-front.jpg" alt="MAHALOコミュニティ" /><div class="cbody"><p class="en">Community</p><h3>MAHALOコミュニティ</h3><p>会員さん同士の交流や、自分のお店の紹介ができる場所の入口です。OHANAの仕組みで参加できます。</p></div></a>
+<a class="card" href="https://www.hair-mahalo.com/" target="_blank" rel="noopener"><img src="assets/img/entrance.jpg" alt="公式サイト" /><div class="cbody"><p class="en">Official Site</p><h3>公式サイト</h3><p>hair-mahalo.com（店舗情報・メニュー・お知らせ）へ。</p></div></a>
+</div>
+</section>
+<div class="band"></div>
+<section>
+<p class="en">Link Collection</p>
+<h2>リンク集</h2>
+<p class="lead">バナーをタップすると、各ページへ進みます。</p>
+<div class="bgrid">
+<a href="https://www.hair-mahalo.com/mahalo-2f/" target="_blank" rel="noopener"><img src="assets/banners/01-mahalo-2f.jpg" alt="hair ID salon MAHALO｜街の中の森の美容室" loading="lazy" /></a><a href="https://www.hair-mahalo.com/mahalo-1f/" target="_blank" rel="noopener"><img src="assets/banners/02-elua-mahalo.jpg" alt="elua Mahalo｜女性限定美容室 リビングルーム風サロン" loading="lazy" /></a><a href="https://momowari.github.io/Eyes-MAHALO/" target="_blank" rel="noopener"><img src="assets/banners/03-eyes-mahalo.jpg" alt="Eyes MAHALO｜まつげパーマ専門 根元からしっかり" loading="lazy" /></a><a href="https://momowari.github.io/Lea-Mahalo/" target="_blank" rel="noopener"><img src="assets/banners/04-lea-mahalo.jpg" alt="Lea Mahalo｜レアな雑貨屋 全国配送・ハンドメイド委託" loading="lazy" /></a><a href="https://www.hair-mahalo.com/" target="_blank" rel="noopener"><img src="assets/banners/05-access.jpg" alt="アクセス・店舗案内｜古町駅より徒歩3分 駐車場3台" loading="lazy" /></a><a href="https://www.hair-mahalo.com/" target="_blank" rel="noopener"><img src="assets/banners/06-wig-mahalo.jpg" alt="WigMAHALO｜ウィッグのご相談はこちら" loading="lazy" /></a><a href="https://www.hair-mahalo.com/" target="_blank" rel="noopener"><img src="assets/banners/07-refa.jpg" alt="ReFa 取り扱い店｜リファの商品は店頭でご相談ください" loading="lazy" /></a><a href="https://momowari.github.io/Eyes-MAHALO/" target="_blank" rel="noopener"><img src="assets/banners/08-lashaddict.jpg" alt="ラッシュアディクト｜まつげ美容液 取り扱い店" loading="lazy" /></a><a href="https://www.hair-mahalo.com/mahalo-2f/" target="_blank" rel="noopener"><img src="assets/banners/09-kirasui.jpg" alt="煌水（キラ水）｜テラヘルツ機能水で髪本来のツヤへ" loading="lazy" /></a><a href="https://www.hair-mahalo.com/mahalo-2f/" target="_blank" rel="noopener"><img src="assets/banners/10-allergy-color.jpg" alt="抗アレルギーカラー｜アレルギーでカラーを諦めないで" loading="lazy" /></a><a href="https://www.hair-mahalo.com/mahalo-2f/" target="_blank" rel="noopener"><img src="assets/banners/11-belle-jouvence.jpg" alt="弱酸性パーマ｜ベル・ジュバンス 髪と肌と同じ弱酸性" loading="lazy" /></a><a href="https://www.hair-mahalo.com/" target="_blank" rel="noopener"><img src="assets/banners/12-hair-quality.jpg" alt="髪質改善・オージュア｜その人の髪に、その人のケアを" loading="lazy" /></a><a href="https://momowari.github.io/OHANA-share/" target="_blank" rel="noopener"><img src="assets/banners/13-ohana.jpg" alt="OHANAシェア＊プロジェクト｜選べる物々交換 100円券が使えるお店" loading="lazy" /></a><a href="https://www.hair-mahalo.com/" target="_blank" rel="noopener"><img src="assets/banners/14-reservation.jpg" alt="ご予約・お問い合わせ｜LINE予約・お電話 前日までにご予約を" loading="lazy" /></a><a href="select.html"><img src="assets/banners/15-select-items.jpg" alt="MAHALOセレクト商品｜店頭のおすすめを、見てそのまま選べる" loading="lazy" /></a><a href="diagnosis.html"><img src="assets/banners/16-hair-diagnosis.jpg" alt="髪質診断｜質問に答えるだけ おすすめメニューと商品をご提案" loading="lazy" /></a><a href="movies.html"><img src="assets/banners/17-movies-cm.jpg" alt="紹介動画・CM｜商品とメニューを動画で見る" loading="lazy" /></a><a href="https://www.hair-mahalo.com/" target="_blank" rel="noopener"><img src="assets/banners/18-first-visit.jpg" alt="初めての方へ｜予約の流れ・駐車場・当日のご案内" loading="lazy" /></a><a href="#headspa"><img src="assets/banners/19-headspa.jpg" alt="ヘッドスパ｜煌水・ベルジュバンス・オージュアから選ぶ" loading="lazy" /></a><a href="#hairset-kitsuke"><img src="assets/banners/20-hairset-kitsuke.jpg" alt="ヘアセット・着付け｜成人式・卒業式・お祝いの日に" loading="lazy" /></a><a href="https://momowari.github.io/Eyes-MAHALO/" target="_blank" rel="noopener"><img src="assets/banners-lp/a1-eyes-lp.jpg" alt="Eyes MAHALO｜まつげパーマ専門LP 根元からしっかり" loading="lazy" /></a><a href="https://momowari.github.io/Lea-Mahalo/" target="_blank" rel="noopener"><img src="assets/banners-lp/a2-lea-lp.jpg" alt="Lea Mahalo｜メルカリセレクトLP 出品中が全部見える" loading="lazy" /></a><a href="https://momowari.github.io/OHANA-share/" target="_blank" rel="noopener"><img src="assets/banners-lp/a3-ohana-lp.jpg" alt="OHANAシェア＊プロジェクト｜選べる物々交換 ヒトモノコトをつなぐ" loading="lazy" /></a><a href="https://momowari.github.io/" target="_blank" rel="noopener"><img src="assets/banners-lp/a4-entrance.jpg" alt="MOMOwaRI 入口ページ｜3つのサイトへの入口" loading="lazy" /></a><a href="https://lit.link/momowari" target="_blank" rel="noopener"><img src="assets/banners-lp/a5-litlink.jpg" alt="lit.link / momowari｜最新情報のハブ リンク集" loading="lazy" /></a><a href="https://momowari.github.io/OHANA-share/members/mahalo.html" target="_blank" rel="noopener"><img src="assets/banners-lp/b1-member-mahalo.jpg" alt="hair ID salon MAHALO 紹介ページ｜OHANAメンバーページ 街の中の森の美容室" loading="lazy" /></a><a href="https://momowari.github.io/OHANA-share/members/elua-mahalo.html" target="_blank" rel="noopener"><img src="assets/banners-lp/b2-member-elua.jpg" alt="elua Mahalo 紹介ページ｜OHANAメンバーページ 女性限定美容室" loading="lazy" /></a><a href="https://momowari.github.io/OHANA-share/members/eyes-mahalo.html" target="_blank" rel="noopener"><img src="assets/banners-lp/b3-member-eyes.jpg" alt="Eyes MAHALO 紹介ページ｜OHANAメンバーページ まつげパーマ専門" loading="lazy" /></a><a href="https://momowari.github.io/OHANA-share/members/lea-mahalo.html" target="_blank" rel="noopener"><img src="assets/banners-lp/b4-member-lea.jpg" alt="Lea Mahalo 紹介ページ｜OHANAメンバーページ レアな雑貨屋" loading="lazy" /></a><a href="https://momowari.github.io/OHANA-share/hito.html" target="_blank" rel="noopener"><img src="assets/banners-lp/c1-hito.jpg" alt="ヒトを探す｜OHANAメンバーを探す" loading="lazy" /></a><a href="https://momowari.github.io/OHANA-share/mono.html" target="_blank" rel="noopener"><img src="assets/banners-lp/c2-mono.jpg" alt="モノを探す｜誰かのモノが、誰かの宝物に" loading="lazy" /></a><a href="https://momowari.github.io/OHANA-share/koto.html" target="_blank" rel="noopener"><img src="assets/banners-lp/c3-koto.jpg" alt="コトを探す｜お店やサービスを探す" loading="lazy" /></a><a href="https://momowari.github.io/OHANA-share/board.html" target="_blank" rel="noopener"><img src="assets/banners-lp/c4-board.jpg" alt="みんなの掲示板｜お知らせと、みんなの投稿" loading="lazy" /></a><a href="https://momowari.github.io/OHANA-share/help.html" target="_blank" rel="noopener"><img src="assets/banners-lp/c5-help.jpg" alt="みんなの困った・質問｜ログインなしで質問・返事が書ける" loading="lazy" /></a><a href="https://momowari.github.io/OHANA-share/ayumi.html" target="_blank" rel="noopener"><img src="assets/banners-lp/c6-ayumi.jpg" alt="OHANAのあゆみ｜これまでの活動の記録" loading="lazy" /></a><a href="https://momowari.github.io/Lea-Mahalo/biyoshi.html" target="_blank" rel="noopener"><img src="assets/banners-lp/d1-biyoshi.jpg" alt="美容師セレクト｜美容室MAHALOの視点で選んだ美容アイテム" loading="lazy" /></a><a href="https://momowari.github.io/Lea-Mahalo/coords.html" target="_blank" rel="noopener"><img src="assets/banners-lp/d2-coords.jpg" alt="コーデ図鑑｜実商品で組んだコーデ 全56通り" loading="lazy" /></a><a href="https://momowari.github.io/Lea-Mahalo/interior.html" target="_blank" rel="noopener"><img src="assets/banners-lp/d3-interior.jpg" alt="雑貨・インテリア｜店内の雑貨から出品中アイテム" loading="lazy" /></a><a href="https://momowari.github.io/Lea-Mahalo/european.html" target="_blank" rel="noopener"><img src="assets/banners-lp/d4-european.jpg" alt="ヨーロピアン特集｜ヨーロピアンなアイテム特集" loading="lazy" /></a><a href="https://momowari.github.io/Lea-Mahalo/lolita.html" target="_blank" rel="noopener"><img src="assets/banners-lp/d5-lolita.jpg" alt="ロリータ・ゴスロリ特集｜ロリータ・ゴスロリのアイテム特集" loading="lazy" /></a><a href="https://momowari.github.io/Lea-Mahalo/baby.html" target="_blank" rel="noopener"><img src="assets/banners-lp/d6-baby.jpg" alt="ベビー・キッズ｜ベビー・キッズの出品中アイテム" loading="lazy" /></a>
+</div>
+</section>
+<div class="band lea"></div>
+<section>
+<p class="en">Other Sites</p>
+<h2 class="lea">ほかのサイト</h2>
+<div class="cards">
+<a class="card" href="https://momowari.github.io/Eyes-MAHALO/" target="_blank" rel="noopener"><img src="assets/img/eyes-tech.jpg" alt="Eyes MAHALO" /><div class="cbody"><p class="en">Eyes Mahalo</p><h3>Eyes MAHALO</h3><p>まつげパーマ専門店。根元からしっかり。</p></div></a>
+<a class="card" href="https://momowari.github.io/Lea-Mahalo/" target="_blank" rel="noopener"><img src="assets/img/zakka-4.jpg" alt="Lea Mahalo" /><div class="cbody"><p class="en">Lea Mahalo</p><h3>Lea Mahalo</h3><p>レアな雑貨屋。メルカリセレクトと、美容師セレクトのページがあります。</p></div></a>
+<a class="card" href="https://momowari.github.io/OHANA-share/" target="_blank" rel="noopener"><img src="assets/img/ohana-poster.jpg" alt="OHANAシェア＊プロジェクト" /><div class="cbody"><p class="en">Ohana Share Project</p><h3>OHANAシェア＊プロジェクト</h3><p>選べる物々交換。ヒトモノコトをつなぐプロジェクトです。</p></div></a>
+<a class="card" href="https://lit.link/momowari" target="_blank" rel="noopener"><img src="assets/img/building-front.jpg" alt="lit.link" /><div class="cbody"><p class="en">lit.link</p><h3>lit.link / momowari</h3><p>最新情報のハブです。</p></div></a>
+</div>
+</section>
+<div class="band"></div>
+<section id="mypage">
+<p class="en">My Page</p>
+<h2>マイページでできること</h2>
+<p class="lead">ログインした会員さんが、自分の情報だけを見られるページです。カルテなどの個人情報は、本人のログインでのみ表示し、公開ページには出しません。</p>
+<table class="info">
+<tr><th>マイカルテ</th><td>来店履歴と、施術のメモが見られます。</td></tr>
+<tr><th>わたしの髪質診断</th><td>診断ページの結果が保存され、前回との違いも見られます。</td></tr>
+<tr><th>あなたへの提案</th><td>次回のおすすめメニューと、ホームケア商品の提案です。</td></tr>
+<tr><th>マイ写真</th><td>施術の写真・ビフォーアフターを、自分だけが見られます。</td></tr>
+<tr><th>髪の成績表</th><td>うるおい／ツヤ／ハリ・コシ／ダメージ／頭皮を5段階で表示。前回比と推移、スタッフの一言つき。</td></tr>
+<tr><th>その後の様子</th><td>来店後の写真やコメントを送れて、スタッフが時系列でアドバイスを返せます。</td></tr>
+</table>
+<p style="margin-top:18px"><a class="btn fill" href="mypage.html">マイページを開く</a></p>
+<p class="note">※ マイページは、OHANAと同じ仕組み（Googleログイン）で使えます。初めての方は、開いた先で無料メンバー登録ができます。</p>
+</section>
+<div class="band"></div>
+<section>
+<p class="en">About</p>
+<h2>店舗のご案内</h2>
+<table class="info">
+<tr><th>hair ID salon MAHALO</th><td>2F 美容室。受付9:00〜18:00、定休日は月曜。</td></tr>
+<tr><th>elua Mahalo</th><td>1F 女性限定美容室。完全予約制・マンツーマン。</td></tr>
+<tr><th>Eyes MAHALO</th><td>1F まつげパーマ専門店。根元からしっかり。</td></tr>
+<tr><th>Lea Mahalo</th><td>1F 雑貨屋。実店舗は来店予約制です。</td></tr>
+<tr><th>アクセス</th><td>松山市味酒町3-2-29 MAHALOビル。古町駅から徒歩約3分、駐車場3台。</td></tr>
+</table>
+</section>
+
+<footer>
+<p class="fname">hair ID salon MAHALO</p>
+<p>松山市味酒町3-2-29 MAHALOビル（2F 美容室／1F elua Mahalo・Eyes MAHALO・Lea Mahalo）<br />
+公式サイト：<a href="https://www.hair-mahalo.com/" target="_blank" rel="noopener">hair-mahalo.com</a></p>
+</footer>
+
+<div class="fab-stack">
+<button class="fab-bot" id="fab-bot" type="button" aria-expanded="false" aria-controls="chat-panel">MAHALOに質問する</button>
+</div>
+<div class="chat-panel" id="chat-panel" hidden>
+<div class="chat-head">
+<div>
+<div class="name">MAHALO 案内ボット</div>
+<div class="desc">よくある質問に自動で答えます。分からないことは、お店に直接聞いてください。</div>
+</div>
+<button class="chat-close" id="chat-close" type="button" aria-label="チャットを閉じる">×</button>
+</div>
+<div class="chat-log" id="chat-log">
+<div class="msg bot">こんにちは。MAHALOの案内ボットです。気になることを下のボタンから選ぶか、入力して聞いてください。</div>
+</div>
+<div class="chips" id="chips"></div>
+<p style="font-size:.75rem;color:#8a8172;margin:8px 2px 0">※ AIが答えています。間違うこともあるので、大事なこと（料金・日時など）は、公式サイトやお店でも確認してください。</p>
+<form class="chat-form" id="chat-form">
+<input id="chat-input" type="text" placeholder="質問を入力してください" autocomplete="off" />
+<button type="submit">送信</button>
+</form>
+</div>
+</div>
+<script src="assets/bot-ui.js"></script>
+<script type="module" src="assets/bot-ai.js"></script>
+</body>
+</html>
