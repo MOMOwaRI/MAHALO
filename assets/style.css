@@ -1,9 +1,9 @@
 /* MAHALO 新規ページ群 共通スタイル
    公式HP（hair-mahalo.com）準拠：白地／明朝見出し／写真大きめ／英字小ラベル／余白広め
-   店舗カラー：MAHALO=青 #1d4e89 / elua=オレンジ #e07b24 / Eyes=紫 #7b4ba8 / Lea=緑 #4d8a4f
+   店舗カラー：MAHALO=青 #0068B7 / elua=オレンジ #e07b24 / Eyes=紫 #7b4ba8 / Lea=緑 #4d8a4f
    表示幅：720px（PC・スマホ共通の中央カラム） */
 :root{
-  --blue:#1d4e89; --blue2:#2b5ea7; --ink:#2b2b28; --soft:#7a756c; --line:#e6e0d4;
+  --blue:#0068B7; --blue2:#3390CC; --ink:#2b2b28; --soft:#7a756c; --line:#e6e0d4;
   --elua:#e07b24; --eyes:#7b4ba8; --lea:#4d8a4f; --paper:#fffdf8;
   --serif:"Hiragino Mincho ProN","Hiragino Mincho Pro","Yu Mincho","YuMincho","Noto Serif JP",serif;
   --sans:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",Meiryo,sans-serif;
@@ -73,7 +73,7 @@ footer .fname{font-family:var(--serif);color:var(--ink);font-size:1rem}
 /* diagnosis chat */
 .dlog{display:flex;flex-direction:column;gap:10px;margin-top:16px}
 .dmsg{max-width:88%;padding:11px 14px;border-radius:16px;font-size:.92rem;line-height:1.75;white-space:pre-wrap}
-.dmsg.bot{background:#eef3fa;border-bottom-left-radius:4px;align-self:flex-start}
+.dmsg.bot{background:#e8f2f9;border-bottom-left-radius:4px;align-self:flex-start}
 .dmsg.user{background:var(--blue);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
 .dmsg.result{background:#fdf6e3;border:1px solid #e5cf9a;max-width:100%;width:100%}
 .dform{margin-top:20px;border-top:1px solid var(--line);padding-top:18px}
@@ -89,7 +89,7 @@ footer .fname{font-family:var(--serif);color:var(--ink);font-size:1rem}
 .chat-close{margin-left:auto;background:none;border:none;font-size:1.3rem;cursor:pointer;color:var(--soft)}
 .chat-log{display:flex;flex-direction:column;gap:8px;max-height:300px;overflow-y:auto;margin:12px 0;padding:2px}
 .msg{max-width:88%;padding:9px 12px;border-radius:14px;font-size:.86rem;line-height:1.7;white-space:pre-wrap}
-.msg.bot{background:#eef3fa;align-self:flex-start;border-bottom-left-radius:4px}
+.msg.bot{background:#e8f2f9;align-self:flex-start;border-bottom-left-radius:4px}
 .msg.user{background:var(--blue);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
 .chips{display:flex;flex-wrap:wrap;gap:6px}
 .chip{border:1.5px solid var(--blue2);color:var(--blue2);background:#fff;border-radius:999px;padding:5px 12px;font-size:.78rem;font-family:inherit;cursor:pointer}
@@ -121,7 +121,7 @@ body.site-editing [data-tk]{outline:1.5px dashed rgba(43,94,167,.55);outline-off
 .score-bar i{display:block;height:100%;background:var(--blue2);border-radius:3px}
 .chart-box{margin-top:18px;border:1px solid var(--line);border-radius:12px;padding:14px;background:#fff}
 .chart-box svg{width:100%;height:auto}
-.staff-comment{background:#eef3fa;border-radius:12px;padding:14px 16px;font-size:.92rem;margin-top:16px}
+.staff-comment{background:#e8f2f9;border-radius:12px;padding:14px 16px;font-size:.92rem;margin-top:16px}
 .staff-comment .en{margin-bottom:4px}
 .timeline{margin-top:14px;border-left:2px solid var(--line);padding-left:18px}
 .tl-item{position:relative;padding:0 0 18px}
@@ -136,7 +136,7 @@ body.site-editing [data-tk]{outline:1.5px dashed rgba(43,94,167,.55);outline-off
 .thread{margin-top:16px;display:flex;flex-direction:column;gap:10px}
 .post{max-width:92%;padding:11px 14px;border-radius:14px;font-size:.9rem;line-height:1.75}
 .post .pmeta{font-size:.72rem;color:var(--soft);margin-bottom:3px}
-.post.me{background:#eef3fa;align-self:flex-start;border-bottom-left-radius:4px}
+.post.me{background:#e8f2f9;align-self:flex-start;border-bottom-left-radius:4px}
 .post.staff{background:#fdf6e3;border:1px solid #e5cf9a;align-self:flex-end;border-bottom-right-radius:4px}
 .post img{border-radius:10px;margin-top:8px}
 .fform{margin-top:18px;border-top:1px solid var(--line);padding-top:16px}

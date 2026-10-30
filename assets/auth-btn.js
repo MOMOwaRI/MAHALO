@@ -18,7 +18,7 @@
     var btn = document.createElement('button');
     btn.type = 'button';
     btn.textContent = '無料メンバー登録';
-    btn.style.cssText = 'background:#fff;color:#1d4e89;border:2px solid #2b5ea7;font-weight:bold;font-family:inherit;font-size:.85rem;border-radius:999px;padding:8px 16px;cursor:pointer;box-shadow:0 4px 12px rgba(120,70,10,.18)';
+    btn.style.cssText = 'background:#fff;color:#0068B7;border:2px solid #3390CC;font-weight:bold;font-family:inherit;font-size:.85rem;border-radius:999px;padding:8px 16px;cursor:pointer;box-shadow:0 4px 12px rgba(120,70,10,.18)';
     var wrapEl = document.querySelector('.wrap') || document.body;
     var rowEl = document.createElement('div');
     rowEl.style.cssText = 'position:fixed;top:10px;right:max(10px, calc(50% - 350px));z-index:96';

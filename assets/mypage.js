@@ -40,7 +40,7 @@
   };
   var QNAMES = {len:'髪の長さ', worry:'一番気になること', color:'カラーやパーマの頻度', scalp:'頭皮の状態', care:'普段のお手入れ', finish:'なりたい仕上がり', interest:'気になるもの'};
   var ITEMS = [
-    {key:'moisture', name:'うるおい', color:'#2b5ea7'},
+    {key:'moisture', name:'うるおい', color:'#3390CC'},
     {key:'shine', name:'ツヤ', color:'#c9a227'},
     {key:'hari', name:'ハリ・コシ', color:'#4d8a4f'},
     {key:'damage', name:'ダメージ', color:'#c0392b'},
