@@ -27,6 +27,10 @@
     followups: [
       {from:'customer', text:'1週間たちましたが、まとまりが続いています。', date:'2026-10-10'},
       {from:'staff', text:'よかったです。乾かす前に、毛先だけオイルを足してみてください。', date:'2026-10-10'}
+    ],
+    profile: {displayName:'見本のお客様', job:'会社員', skill:'ガーデニング', hobby:'旅行・写真', intro:'よろしくお願いします。', isPublic:false},
+    posts: [
+      {id:'sample1', text:'今日のヘアスタイル。毛先を軽くしてもらいました。', photo:'assets/img/salon-film2.jpg', isHair:true, isPublic:true, createdAt:'2026-10-20'}
     ]
   };
   var LABELS = {
@@ -158,6 +162,8 @@
     }).join('');
   }
   function renderAll(data){
+    fillProfile(data.profile || null);
+    renderPosts(data.posts || []);
     renderScores(data.scores || []);
     renderKarte(data.karte || []);
     renderDiag(data.diagnoses || []);
@@ -182,11 +188,135 @@
       base.collection('scores').orderBy('createdAt', 'asc').limit(12).get().then(function(s){ return snapList(s); }).catch(function(){ return []; }),
       base.collection('photos').orderBy('createdAt', 'desc').limit(20).get().then(function(s){ return snapList(s); }).catch(function(){ return []; }),
       base.collection('followups').orderBy('createdAt', 'asc').limit(50).get().then(function(s){ return snapList(s); }).catch(function(){ return []; }),
-      base.collection('proposals').doc('current').get().then(function(d){ return d.exists ? d.data() : null; }).catch(function(){ return null; })
+      base.collection('proposals').doc('current').get().then(function(d){ return d.exists ? d.data() : null; }).catch(function(){ return null; }),
+      base.collection('profile').doc('main').get().then(function(d){ return d.exists ? d.data() : null; }).catch(function(){ return null; }),
+      base.collection('posts').orderBy('createdAt', 'desc').limit(30).get().then(function(s){ var out = []; s.forEach(function(d){ var v = d.data(); v.id = d.id; out.push(v); }); return out; }).catch(function(){ return []; })
     ];
     Promise.all(jobs).then(function(r){
-      state.data = {karte: r[0], diagnoses: r[1], scores: r[2], photos: r[3], followups: r[4], proposal: r[5]};
+      state.data = {karte: r[0], diagnoses: r[1], scores: r[2], photos: r[3], followups: r[4], proposal: r[5], profile: r[6], posts: r[7]};
+      state.profile = r[6];
       renderAll(state.data);
+    });
+  }
+
+  /* ---------- プロフィール登録 ---------- */
+  function fillProfile(p){
+    state.profile = p;
+    if(!p) return;
+    var set = function(id, v){ var el = $(id); if(el && v != null) el.value = v; };
+    set('pf-name', p.displayName); set('pf-job', p.job); set('pf-skill', p.skill); set('pf-hobby', p.hobby); set('pf-intro', p.intro);
+    var pub = $('pf-public'); if(pub) pub.checked = !!p.isPublic;
+    if(p.icon){ var w = $('pf-icon-preview-wrap'), im = $('pf-icon-preview'); if(w && im){ im.src = p.icon; w.style.display = ''; } }
+    if(p.displayName){ var nm = $('member-name'); if(nm) nm.textContent = p.displayName; }
+  }
+  function compressTo(file, max, done){
+    var reader = new FileReader();
+    reader.onload = function(){
+      var img = new Image();
+      img.onload = function(){
+        var scale = Math.min(1, max / Math.max(img.width, img.height));
+        var c = document.createElement('canvas');
+        c.width = Math.round(img.width * scale); c.height = Math.round(img.height * scale);
+        c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+        done(c.toDataURL('image/jpeg', 0.82));
+      };
+      img.onerror = function(){ done(null); };
+      img.src = reader.result;
+    };
+    reader.onerror = function(){ done(null); };
+    reader.readAsDataURL(file);
+  }
+  function initProfile(){
+    var form = $('profile-form'); if(!form) return;
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var msg = $('pf-msg');
+      if(state.sample || !state.user){ if(msg) msg.textContent = '見本では保存できません。ログインしてから保存してください。'; return; }
+      if(msg) msg.textContent = '保存しています…';
+      var iconFile = $('pf-icon') && $('pf-icon').files[0];
+      var finish = function(iconData){
+        var p = {
+          displayName: $('pf-name').value.trim(),
+          job: $('pf-job').value.trim(),
+          skill: $('pf-skill').value.trim(),
+          hobby: $('pf-hobby').value.trim(),
+          intro: $('pf-intro').value.trim(),
+          icon: iconData || (state.profile && state.profile.icon) || '',
+          isPublic: !!($('pf-public') && $('pf-public').checked),
+          updatedAt: new Date().toISOString()
+        };
+        var uid = state.user.uid;
+        db().collection('mahaloMembers').doc(uid).collection('profile').doc('main').set(p).then(function(){
+          state.profile = p;
+          var pub = {displayName: p.displayName, job: p.job, skill: p.skill, hobby: p.hobby, intro: p.intro, icon: p.icon, updatedAt: p.updatedAt};
+          var sync = p.isPublic ? db().collection('memberProfiles').doc(uid).set(pub) : db().collection('memberProfiles').doc(uid).delete().catch(function(){});
+          sync.then(function(){
+            if(msg) msg.textContent = p.isPublic ? '保存しました。コミュニティページにも載ります。' : '保存しました。';
+            fillProfile(p);
+          });
+        }).catch(function(){ if(msg) msg.textContent = '保存できませんでした。時間をおいて試してください。'; });
+      };
+      if(iconFile) compressTo(iconFile, 400, finish); else finish(null);
+    });
+    var iconInput = $('pf-icon');
+    if(iconInput) iconInput.addEventListener('change', function(){
+      var f = iconInput.files[0]; if(!f) return;
+      compressTo(f, 400, function(d){ if(d){ var w = $('pf-icon-preview-wrap'), im = $('pf-icon-preview'); if(w && im){ im.src = d; w.style.display = ''; } } });
+    });
+  }
+
+  /* ---------- 投稿（つぶやき・シェア） ---------- */
+  function renderPosts(list){
+    var area = $('post-list'); if(!area) return;
+    if(!list.length){ area.innerHTML = '<div class="empty-box">まだ投稿がありません。最初の投稿をどうぞ。</div>'; return; }
+    area.innerHTML = list.map(function(p){
+      var d = (p.createdAt || '').slice(0, 10);
+      var badges = (p.isHair ? '<span class="tag">ヘアスタイル</span> ' : '') + (p.isPublic ? '<span class="tag">公開中</span>' : '<span class="tag">自分とスタッフのみ</span>');
+      return '<div class="post-item" style="border:1.5px solid #e3d9c8;border-radius:12px;padding:12px;margin-bottom:10px;background:#fff">' +
+        (p.photo ? '<img src="' + p.photo + '" alt="投稿写真" style="width:100%;border-radius:8px;margin-bottom:8px" />' : '') +
+        '<p style="margin:0 0 6px">' + esc(p.text || '') + '</p>' +
+        '<p class="note" style="margin:0">' + d + ' ' + badges +
+        (state.sample ? '' : ' <button type="button" class="btn small" data-delpost="' + p.id + '" style="margin-left:8px">削除</button>') + '</p></div>';
+    }).join('');
+    area.querySelectorAll('[data-delpost]').forEach(function(b){
+      b.addEventListener('click', function(){
+        if(!confirm('この投稿を削除しますか？')) return;
+        var id = b.getAttribute('data-delpost');
+        var uid = state.user.uid;
+        db().collection('mahaloMembers').doc(uid).collection('posts').doc(id).delete()
+          .then(function(){ return db().collection('memberPosts').doc(id).delete().catch(function(){}); })
+          .then(function(){ loadAll(uid); });
+      });
+    });
+  }
+  function initPosts(){
+    var form = $('post-form'); if(!form) return;
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var msg = $('post-msg');
+      if(state.sample || !state.user){ if(msg) msg.textContent = '見本では投稿できません。ログインしてから投稿してください。'; return; }
+      var text = $('post-text').value.trim();
+      var file = $('post-photo') && $('post-photo').files[0];
+      if(!text && !file){ if(msg) msg.textContent = 'ひとことか写真を入れてください。'; return; }
+      if(msg) msg.textContent = '投稿しています…';
+      var finish = function(photo){
+        var uid = state.user.uid;
+        var ref = db().collection('mahaloMembers').doc(uid).collection('posts').doc();
+        var post = {text: text, photo: photo || '', isHair: !!($('post-hair') && $('post-hair').checked), isPublic: !!($('post-public') && $('post-public').checked), createdAt: new Date().toISOString()};
+        ref.set(post).then(function(){
+          var jobs = [];
+          if(post.isPublic){
+            var pr = state.profile || {};
+            jobs.push(db().collection('memberPosts').doc(ref.id).set({uid: uid, displayName: pr.displayName || (state.user.displayName || ''), icon: pr.icon || '', text: post.text, photo: post.photo, isHair: post.isHair, createdAt: post.createdAt}));
+          }
+          Promise.all(jobs).then(function(){
+            if(msg) msg.textContent = '投稿しました。';
+            $('post-text').value = ''; if($('post-photo')) $('post-photo').value = '';
+            loadAll(uid);
+          });
+        }).catch(function(){ if(msg) msg.textContent = '投稿できませんでした。時間をおいて試してください。'; });
+      };
+      if(file) compressTo(file, 900, finish); else finish(null);
     });
   }
 
@@ -237,7 +367,7 @@
   function showGate(){ var g = $('mypage-gate'), a = $('mypage-app'); if(g) g.style.display = ''; if(a) a.style.display = 'none'; }
   function showApp(){ var g = $('mypage-gate'), a = $('mypage-app'); if(g) g.style.display = 'none'; if(a) a.style.display = ''; }
   function enterSample(){
-    state.sample = true; state.data = SAMPLE;
+    state.sample = true; state.data = SAMPLE; state.profile = SAMPLE.profile;
     showApp();
     var b = $('sample-banner'); if(b) b.style.display = '';
     var nm = $('member-name'); if(nm) nm.textContent = '見本のお客様';
@@ -246,6 +376,8 @@
   }
   function init(){
     initForm();
+    initProfile();
+    initPosts();
     var sb = $('sample-btn'); if(sb) sb.addEventListener('click', enterSample);
     var gb = $('sample-btn-gate'); if(gb) gb.addEventListener('click', enterSample);
     function loginMsg(txt){ var m = $('login-msg'); if(m){ m.textContent = txt; m.style.display = txt ? '' : 'none'; } }
