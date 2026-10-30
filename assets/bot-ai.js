@@ -6,12 +6,12 @@ import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.g
 var SYS = window.__botSYS || "";
 try {
   var aiApp = initializeApp({
-  apiKey: "AIzaSyCao64N8dfQoXBmsMHIDpLpQwQyXp-2iw0",
-  authDomain: "ohana-share.firebaseapp.com",
-  projectId: "ohana-share",
-  storageBucket: "ohana-share.firebasestorage.app",
-  messagingSenderId: "825904150210",
-  appId: "1:825904150210:web:4ae90f047ac8cc761cad5b"
+  apiKey: "AIzaSyAdq6e71I-1XsBHOsMc4Q_djsHlecqQKcQ",
+  authDomain: "mahalo-12007.firebaseapp.com",
+  projectId: "mahalo-12007",
+  storageBucket: "mahalo-12007.firebasestorage.app",
+  messagingSenderId: "882306860348",
+  appId: "1:882306860348:web:c540fd2f313206cab6ca39"
 }, 'ohana-ai');
   initializeAppCheck(aiApp, { provider: new ReCaptchaEnterpriseProvider('6LfLJwcuAAAAAJk3CSivW9C-9E0Q-Cexl9wwibrv'), isTokenAutoRefreshEnabled: true });
   var aiDb = getFirestore(aiApp);

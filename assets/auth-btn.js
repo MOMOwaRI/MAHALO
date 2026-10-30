@@ -1,19 +1,21 @@
 /* OHANA LP (github-site/index.html) の認証ボタンを移植し、色をMAHALOブルーに変更。会員登録はMAHALO専用（会員データは mahaloMembers に分離）。ログイン中の一般会員は、このサイトの mypage.html へ。 */
 (function(){
-  var LOGIN_URL = 'https://momowari.github.io/OHANA-share/login.html';
+  var LOGIN_URL = 'mypage.html';
   var DOC = '';
   var OWNER = 'ELCzyeeoDCU4gveavc077L4jBqE3';
+  var OWNER_EMAIL = 'zakka.lea@gmail.com';
+  function isOwner(u){ return !!u && (u.uid === OWNER || u.email === OWNER_EMAIL); }
   function memberKnown(){ try{ return !!localStorage.getItem('ohana_member'); }catch(e){ return false; } }
   function memberLabel(){ return memberKnown() ? 'ログイン' : '無料メンバー登録'; }
   function init(){
     if(!window.firebase || !firebase.auth) return;
     try{ if(!firebase.apps.length) firebase.initializeApp({
-  apiKey: "AIzaSyCao64N8dfQoXBmsMHIDpLpQwQyXp-2iw0",
-  authDomain: "ohana-share.firebaseapp.com",
-  projectId: "ohana-share",
-  storageBucket: "ohana-share.firebasestorage.app",
-  messagingSenderId: "825904150210",
-  appId: "1:825904150210:web:4ae90f047ac8cc761cad5b"
+  apiKey: "AIzaSyAdq6e71I-1XsBHOsMc4Q_djsHlecqQKcQ",
+  authDomain: "mahalo-12007.firebaseapp.com",
+  projectId: "mahalo-12007",
+  storageBucket: "mahalo-12007.firebasestorage.app",
+  messagingSenderId: "882306860348",
+  appId: "1:882306860348:web:c540fd2f313206cab6ca39"
 }); }catch(e){}
     var btn = document.createElement('button');
     btn.type = 'button';
@@ -30,15 +32,15 @@
     btn.addEventListener('click', function(){
       var u = firebase.auth().currentUser;
       if(!u){ location.href = memberKnown() ? LOGIN_URL + '#login' : LOGIN_URL; }
-      else if(u.uid === OWNER && window.__toggleSiteEdit){ window.__toggleSiteEdit(); }
-      else if(u.uid === OWNER && DOC){ location.href = 'member.html?id=' + DOC + '&edit=1'; }
+      else if(isOwner(u) && window.__toggleSiteEdit){ window.__toggleSiteEdit(); }
+      else if(isOwner(u) && DOC){ location.href = 'member.html?id=' + DOC + '&edit=1'; }
       else location.href = 'mypage.html';
     });
     firebase.auth().onAuthStateChanged(function(u){
       if(!u){ btn.textContent = memberLabel(); return; }
-      btn.textContent = (u.uid === OWNER) ? (document.body.classList.contains('site-editing') ? '編集を終わる' : '✎ 編集する') : 'マイページ';
+      btn.textContent = (isOwner(u)) ? (document.body.classList.contains('site-editing') ? '編集を終わる' : '✎ 編集する') : 'マイページ';
       try{ localStorage.setItem('ohana_member', '1'); }catch(e){}
-      if(u.uid === OWNER && DOC){
+      if(isOwner(u) && DOC){
         var pv = document.querySelector('.hero-pv');
         if(pv){
           pv.style.cursor = 'pointer';
