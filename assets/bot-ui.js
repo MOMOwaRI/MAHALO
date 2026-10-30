@@ -32,7 +32,7 @@ function addFallback(){
 }
 function has(text, words){ for (var i = 0; i < words.length; i++){ if (text.indexOf(words[i]) !== -1) return true; } return false; }
 function answerFor(text){
-  if (has(text, ["こんにちは","こんばんは","おはよう","はじめまして"])) { window.__ct='あいさつ'; return "こんにちは！MAHALOの案内役です。知りたいことを聞いてください。下のボタンからも選べます。"; }
+  if (has(text, ["こんにちは","こんばんは","おはよう","はじめまして"])) { window.__ct='あいさつ'; return "こんにちは！MAHALOです。知りたいことを聞いてください。下のボタンからも選べます。"; }
   if (has(text, ["ありがとう","助かり","わかった","分かった"])) { window.__ct='お礼'; return "どういたしまして！また何かあれば聞いてください。"; }
   if (has(text, ["キラ水","煌水","きらすい"])) { window.__ct=QA[4].q; return QA[4].a; }
   if (has(text, ["診断","髪質","毛質"])) { window.__ct=QA[3].q; return QA[3].a; }
