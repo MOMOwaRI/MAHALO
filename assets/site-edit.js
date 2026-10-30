@@ -6,6 +6,11 @@
   var applied = {};
   var linkList = [];
   var pendingLinks = {};
+  var imgList = [];
+  var pendingImages = {};
+  var appliedImages = {};
+  var imgInput = null;
+  var imgTarget = null;
   function $(id){ return document.getElementById(id); }
   function esc(t){ return String(t == null ? '' : t).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
   function hash(t){ var h = 0; for(var i = 0; i < t.length; i++){ h = (h * 31 + t.charCodeAt(i)) | 0; } return 'k' + (h >>> 0).toString(36); }
@@ -38,6 +43,58 @@
       a.setAttribute('data-lk', String(linkList.length));
       linkList.push({el: a, text: a.textContent.trim(), href: a.getAttribute('href'), html: a.innerHTML});
     });
+  }
+  function stampImages(){
+    imgList = [];
+    document.querySelectorAll('.wrap img').forEach(function(im){
+      if(im.closest('a')) return;
+      if(excluded(im)) return;
+      if(im.closest('.authbar-row,.card .cbody')) return;
+      var key = 'img' + hash(im.getAttribute('src') || '');
+      im.setAttribute('data-ik', key);
+      imgList.push({el: im, key: key, orig: im.getAttribute('src')});
+      appliedImages[key] = im.getAttribute('src');
+    });
+  }
+  function compressImage(file, done){
+    var reader = new FileReader();
+    reader.onload = function(){
+      var img = new Image();
+      img.onload = function(){
+        var scale = Math.min(1, 1000 / Math.max(img.width, img.height));
+        var c = document.createElement('canvas');
+        c.width = Math.round(img.width * scale); c.height = Math.round(img.height * scale);
+        c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+        done(c.toDataURL('image/jpeg', 0.78));
+      };
+      img.onerror = function(){ done(null); };
+      img.src = reader.result;
+    };
+    reader.onerror = function(){ done(null); };
+    reader.readAsDataURL(file);
+  }
+  function pickImage(im){
+    imgTarget = im;
+    if(!imgInput){
+      imgInput = document.createElement('input');
+      imgInput.type = 'file';
+      imgInput.accept = 'image/*';
+      imgInput.style.display = 'none';
+      document.body.appendChild(imgInput);
+      imgInput.addEventListener('change', function(){
+        var f = imgInput.files && imgInput.files[0];
+        imgInput.value = '';
+        if(!f || !imgTarget) return;
+        var target = imgTarget;
+        compressImage(f, function(data){
+          if(!data){ if($('sb-msg')) $('sb-msg').textContent = '写真を読み込めませんでした'; return; }
+          target.src = data;
+          pendingImages[target.getAttribute('data-ik')] = data;
+          if($('sb-msg')) $('sb-msg').textContent = '写真を変更しました。「保存する」で確定します';
+        });
+      });
+    }
+    imgInput.click();
   }
   function applyLink(i, v){
     var L = linkList[i];
@@ -97,6 +154,8 @@
     if(!on){ var lp = $('link-panel'); if(lp) lp.remove(); }
   }
   function undoEdit(){
+    imgList.forEach(function(I){ if(appliedImages[I.key]) I.el.src = appliedImages[I.key]; });
+    pendingImages = {};
     targets().forEach(function(el){ var k = el.getAttribute('data-tk'); if(k && applied[k] !== undefined) el.textContent = applied[k]; });
     linkList.forEach(function(L, i){
       var saved = applied['lnk' + i];
@@ -118,7 +177,8 @@
       else if(applied[k] === undefined && v) upd[k] = v;
     });
     Object.keys(pendingLinks).forEach(function(i){ upd['lnk' + i] = JSON.stringify(pendingLinks[i]); });
-    var job = Object.keys(upd).length ? db().collection('siteTexts').doc(PAGE).set(upd, {merge: true}).then(function(){ Object.keys(upd).forEach(function(k){ applied[k] = upd[k]; }); }) : Promise.resolve();
+    Object.keys(pendingImages).forEach(function(k){ upd[k] = pendingImages[k]; });
+    var job = Object.keys(upd).length ? db().collection('siteTexts').doc(PAGE).set(upd, {merge: true}).then(function(){ Object.keys(upd).forEach(function(k){ applied[k] = upd[k]; if(k.indexOf('img') === 0) appliedImages[k] = upd[k]; }); pendingImages = {}; }) : Promise.resolve();
     job.then(function(){
       $('sb-msg').textContent = '保存しました';
       setTimeout(function(){ setEdit(false); }, 500);
@@ -126,6 +186,7 @@
   }
   document.addEventListener('click', function(ev){
     if(!editing) return;
+    if(ev.target && ev.target.tagName === 'IMG' && ev.target.hasAttribute('data-ik')){ ev.preventDefault(); ev.stopPropagation(); pickImage(ev.target); return; }
     var a = ev.target.closest ? ev.target.closest('a[href]') : null;
     if(a && a.hasAttribute('data-lk')){ ev.preventDefault(); openLinkPanel(a); }
   }, true);
@@ -135,6 +196,10 @@
     var els = targets();
     els.forEach(function(el){ el.setAttribute('data-tk', hash(el.textContent.trim())); applied[el.getAttribute('data-tk')] = el.textContent.trim(); });
     stampLinks();
+    stampImages();
+    var st = document.createElement('style');
+    st.textContent = 'body.site-editing .wrap img[data-ik]{outline:3px dashed #0068B7;outline-offset:2px;cursor:pointer}';
+    document.head.appendChild(st);
     if(firebase.firestore){
       db().collection('siteTexts').doc(PAGE).get().then(function(doc){
         if(!doc.exists) return;
@@ -144,6 +209,10 @@
         linkList.forEach(function(L, i){
           var v = data['lnk' + i];
           if(typeof v === 'string'){ applied['lnk' + i] = v; try{ applyLink(i, JSON.parse(v)); }catch(e){} }
+        });
+        imgList.forEach(function(I){
+          var v = data[I.key];
+          if(typeof v === 'string' && v.indexOf('data:image') === 0){ I.el.src = v; appliedImages[I.key] = v; }
         });
       }).catch(function(){});
     }
