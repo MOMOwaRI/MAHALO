@@ -5,7 +5,7 @@
   var OWNER = 'ELCzyeeoDCU4gveavc077L4jBqE3';
   var OWNER_EMAIL = 'zakka.lea@gmail.com';
   function isOwner(u){ return !!u && (u.uid === OWNER || u.email === OWNER_EMAIL); }
-  var STAFF_EMAILS = [];
+  var STAFF_EMAILS = ['mahalo1455@gmail.com'];
   function isEditor(u){ return isOwner(u) || (!!u && STAFF_EMAILS.indexOf(u.email) >= 0); }
   function memberKnown(){ try{ return !!localStorage.getItem('ohana_member'); }catch(e){ return false; } }
   function memberLabel(){ return memberKnown() ? 'ログイン' : '無料メンバー登録'; }
