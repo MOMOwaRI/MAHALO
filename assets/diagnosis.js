@@ -85,7 +85,7 @@
             save.appendChild(document.createElement('br')); save.appendChild(mp);
           } else {
             saveNote('この診断結果は、会員登録（無料）してログインすると、マイページに自動で保存されます。前回の診断との違いも見られるようになります。');
-            var b = document.createElement('a'); b.className = 'oc-link'; b.href = 'https://momowari.github.io/OHANA-share/login.html'; b.target = '_blank'; b.rel = 'noopener'; b.textContent = '無料メンバー登録／ログイン';
+            var b = document.createElement('a'); b.className = 'oc-link'; b.href = 'mypage.html'; b.textContent = '無料メンバー登録／ログイン';
             save.appendChild(document.createElement('br')); save.appendChild(b);
           }
         } else {

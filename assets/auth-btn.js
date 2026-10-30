@@ -1,4 +1,4 @@
-/* OHANA LP (github-site/index.html) の認証ボタンを移植し、色をMAHALOブルーに変更。ログインは OHANA と同じFirebaseプロジェクト ohana-share を共用。ログイン中の一般会員は、このサイトの mypage.html へ。 */
+/* OHANA LP (github-site/index.html) の認証ボタンを移植し、色をMAHALOブルーに変更。会員登録はMAHALO専用（会員データは mahaloMembers に分離）。ログイン中の一般会員は、このサイトの mypage.html へ。 */
 (function(){
   var LOGIN_URL = 'https://momowari.github.io/OHANA-share/login.html';
   var DOC = '';
