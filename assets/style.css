@@ -1,0 +1,154 @@
+/* MAHALO 新規ページ群 共通スタイル
+   公式HP（hair-mahalo.com）準拠：白地／明朝見出し／写真大きめ／英字小ラベル／余白広め
+   店舗カラー：MAHALO=青 #1d4e89 / elua=オレンジ #e07b24 / Eyes=紫 #7b4ba8 / Lea=緑 #4d8a4f
+   表示幅：720px（PC・スマホ共通の中央カラム） */
+:root{
+  --blue:#1d4e89; --blue2:#2b5ea7; --ink:#2b2b28; --soft:#7a756c; --line:#e6e0d4;
+  --elua:#e07b24; --eyes:#7b4ba8; --lea:#4d8a4f; --paper:#fffdf8;
+  --serif:"Hiragino Mincho ProN","Hiragino Mincho Pro","Yu Mincho","YuMincho","Noto Serif JP",serif;
+  --sans:"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",Meiryo,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#f4f1ea;color:var(--ink);font-family:var(--sans);line-height:1.9;font-size:16px}
+.wrap{max-width:720px;margin:0 auto;background:#fff;min-height:100vh;box-shadow:0 0 24px rgba(90,70,40,.08)}
+img{max-width:100%;display:block}
+a{color:var(--blue2)}
+h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.5}
+.en{font-family:Georgia,"Times New Roman",serif;letter-spacing:.32em;text-transform:uppercase;font-size:.68rem;color:var(--soft)}
+/* header */
+header.site{padding:34px 24px 10px;text-align:center}
+header.site .en{margin-bottom:6px}
+header.site h1{font-size:1.7rem;margin:0 0 4px}
+header.site .sub{font-size:.85rem;color:var(--soft);margin:0}
+nav.pagenav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:16px 16px 6px}
+nav.pagenav a{text-decoration:none;color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.82rem;background:#fff}
+nav.pagenav a.now{background:var(--blue);border-color:var(--blue);color:#fff}
+.hero{margin:18px 0 0}
+.hero img{width:100%;height:auto}
+.hero-cap{padding:10px 24px 0;font-size:.8rem;color:var(--soft);text-align:right}
+section{padding:38px 24px 8px}
+section h2{font-size:1.35rem;margin:0 0 6px;padding-left:12px;border-left:4px solid var(--blue)}
+section h2.elua{border-color:var(--elua)} section h2.eyes{border-color:var(--eyes)} section h2.lea{border-color:var(--lea)}
+section .lead{color:#4c463e;font-size:.95rem}
+.band{height:5px;border-radius:3px;background:var(--blue);margin:26px 24px 0}
+.band.elua{background:var(--elua)} .band.eyes{background:var(--eyes)} .band.lea{background:var(--lea)}
+/* cards */
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}
+@media(max-width:560px){.cards{grid-template-columns:1fr}}
+.card{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff;text-decoration:none;color:var(--ink);display:block}
+.card img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.card .cbody{padding:14px 16px 16px}
+.card h3{margin:0 0 4px;font-size:1.05rem}
+.card p{margin:0;font-size:.85rem;color:#5c564c;line-height:1.7}
+.card .en{margin-bottom:4px}
+.badge{display:inline-block;font-size:.7rem;border:1px solid var(--blue2);color:var(--blue2);border-radius:999px;padding:1px 9px;margin-top:8px}
+.badge.soon{border-color:#b9b0a0;color:#8a8172}
+.badge.photo{border-color:#c9a86a;color:#8a6a1f;background:#fdf6e3}
+/* banner grid：正方形バナーをグリッドで */
+.bgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
+@media(max-width:560px){.bgrid{grid-template-columns:repeat(2,1fr)}}
+.bgrid a{display:block;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.bgrid img{width:100%;aspect-ratio:1/1;object-fit:cover}
+/* product */
+.price{font-size:.85rem;color:#8a6a1f;background:#fdf6e3;border:1px dashed #d9bd7f;border-radius:8px;padding:6px 10px;margin-top:10px}
+.note{font-size:.8rem;color:var(--soft)}
+.btn{display:inline-block;text-decoration:none;border-radius:999px;padding:11px 26px;font-weight:bold;font-size:.9rem;border:1.5px solid var(--blue);color:var(--blue);background:#fff}
+.btn.fill{background:var(--blue);color:#fff}
+.btn-line2{display:inline-block;text-decoration:none;border-radius:999px;padding:11px 26px;font-weight:bold;font-size:.9rem;background:#06c755;color:#fff}
+/* table */
+table.info{width:100%;border-collapse:collapse;font-size:.9rem;margin-top:12px}
+table.info th,table.info td{border-bottom:1px solid var(--line);padding:9px 8px;text-align:left;vertical-align:top}
+table.info th{width:32%;color:var(--soft);font-weight:normal;font-family:var(--serif)}
+footer{padding:44px 24px 90px;text-align:center;color:var(--soft);font-size:.82rem}
+footer .fname{font-family:var(--serif);color:var(--ink);font-size:1rem}
+/* movies */
+.movie{border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:18px;background:#fff}
+.movie img{width:100%}
+.movie .cbody{padding:14px 16px 16px}
+.movie h3{margin:0 0 4px;font-size:1.05rem}
+.movie p{margin:0;font-size:.85rem;color:#5c564c}
+.movie.soon{background:#faf8f3;border-style:dashed}
+.movie.soon .ph{aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;color:#a29885;font-family:var(--serif);letter-spacing:.2em;background:#f1ede3}
+/* diagnosis chat */
+.dlog{display:flex;flex-direction:column;gap:10px;margin-top:16px}
+.dmsg{max-width:88%;padding:11px 14px;border-radius:16px;font-size:.92rem;line-height:1.75;white-space:pre-wrap}
+.dmsg.bot{background:#eef3fa;border-bottom-left-radius:4px;align-self:flex-start}
+.dmsg.user{background:var(--blue);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+.dmsg.result{background:#fdf6e3;border:1px solid #e5cf9a;max-width:100%;width:100%}
+.dform{margin-top:20px;border-top:1px solid var(--line);padding-top:18px}
+.dform label{display:block;font-family:var(--serif);margin:16px 0 6px}
+.dform select{width:100%;padding:12px;border:1.5px solid var(--line);border-radius:10px;font-size:1rem;font-family:inherit;background:#fff}
+/* chat bot（OHANA実装の移植・色はMAHALOブルー） */
+.fab-stack{position:fixed;right:max(12px,calc(50% - 348px));bottom:14px;z-index:95;display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+.fab-bot{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;border:none;border-radius:999px;padding:11px 18px;font-family:inherit;font-weight:bold;font-size:.88rem;cursor:pointer;box-shadow:0 6px 16px rgba(29,78,137,.35)}
+.chat-panel{position:fixed;right:max(12px,calc(50% - 348px));bottom:14px;z-index:97;width:min(360px,calc(100vw - 24px));background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 14px 40px rgba(60,50,30,.25);padding:14px}
+.chat-head{display:flex;gap:10px;align-items:flex-start}
+.chat-head .name{font-family:var(--serif);font-weight:bold}
+.chat-head .desc{font-size:.75rem;color:var(--soft);line-height:1.5}
+.chat-close{margin-left:auto;background:none;border:none;font-size:1.3rem;cursor:pointer;color:var(--soft)}
+.chat-log{display:flex;flex-direction:column;gap:8px;max-height:300px;overflow-y:auto;margin:12px 0;padding:2px}
+.msg{max-width:88%;padding:9px 12px;border-radius:14px;font-size:.86rem;line-height:1.7;white-space:pre-wrap}
+.msg.bot{background:#eef3fa;align-self:flex-start;border-bottom-left-radius:4px}
+.msg.user{background:var(--blue);color:#fff;align-self:flex-end;border-bottom-right-radius:4px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{border:1.5px solid var(--blue2);color:var(--blue2);background:#fff;border-radius:999px;padding:5px 12px;font-size:.78rem;font-family:inherit;cursor:pointer}
+.oc-link{display:inline-block;margin-top:8px;background:var(--blue);color:#fff;text-decoration:none;border-radius:999px;padding:7px 14px;font-size:.8rem;font-weight:bold}
+.chat-form{display:flex;gap:6px;margin-top:10px}
+.chat-form input{flex:1;padding:10px;border:1.5px solid var(--line);border-radius:999px;font-family:inherit;font-size:.9rem}
+.chat-form button{background:var(--blue);color:#fff;border:none;border-radius:999px;padding:10px 16px;font-family:inherit;font-weight:bold;cursor:pointer}
+/* その場編集（OHANA siteTexts 移植用） */
+#site-savebar{position:fixed;left:50%;transform:translateX(-50%);bottom:14px;z-index:120;background:#fff;border:1.5px solid var(--blue2);border-radius:999px;padding:8px 10px;display:none;gap:8px;align-items:center;box-shadow:0 10px 30px rgba(60,50,30,.25)}
+#site-savebar.on{display:flex}
+#site-savebar button{font-family:inherit;font-weight:bold;border-radius:999px;padding:7px 16px;cursor:pointer}
+#sb-save{background:var(--blue);color:#fff;border:none}
+#sb-cancel{background:#fff;color:#8a6a4f;border:1.5px solid #d8c7ae}
+body.site-editing [data-tk]{outline:1.5px dashed rgba(43,94,167,.55);outline-offset:2px}
+.ied-panel{background:#fffdf4;border:1.5px solid #d9bd7f;border-radius:12px;padding:14px;margin:10px 0}
+.ied-panel textarea,.ied-panel input{width:100%;font-family:inherit;padding:8px;border:1px solid var(--line);border-radius:8px}
+/* --- 第2弾追加：マイページ --- */
+.sample-banner{background:#fdf0f3;border:1.5px solid #d4738e;color:#8a2f47;border-radius:12px;padding:12px 16px;font-size:.88rem;margin-top:16px}
+.empty-box{border:1.5px dashed var(--line);border-radius:12px;padding:18px 16px;color:var(--soft);font-size:.9rem;background:#faf8f3;margin-top:14px}
+.score-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:16px}
+@media(max-width:560px){.score-grid{grid-template-columns:repeat(2,1fr)}}
+.score-item{border:1px solid var(--line);border-radius:12px;padding:12px 10px;text-align:center;background:#fff}
+.score-item .si-name{font-family:var(--serif);font-size:.85rem}
+.score-item .si-num{font-size:1.7rem;font-family:var(--serif);color:var(--blue)}
+.score-item .si-num small{font-size:.8rem;color:var(--soft)}
+.score-item .si-diff{font-size:.75rem}
+.si-diff.up{color:#2e7d32}.si-diff.down{color:#c0392b}.si-diff.same{color:var(--soft)}
+.score-bar{height:6px;border-radius:3px;background:#eef0f3;margin-top:8px;overflow:hidden}
+.score-bar i{display:block;height:100%;background:var(--blue2);border-radius:3px}
+.chart-box{margin-top:18px;border:1px solid var(--line);border-radius:12px;padding:14px;background:#fff}
+.chart-box svg{width:100%;height:auto}
+.staff-comment{background:#eef3fa;border-radius:12px;padding:14px 16px;font-size:.92rem;margin-top:16px}
+.staff-comment .en{margin-bottom:4px}
+.timeline{margin-top:14px;border-left:2px solid var(--line);padding-left:18px}
+.tl-item{position:relative;padding:0 0 18px}
+.tl-item::before{content:"";position:absolute;left:-24px;top:8px;width:10px;height:10px;border-radius:50%;background:var(--blue)}
+.tl-item .tl-date{font-size:.78rem;color:var(--soft)}
+.tl-item h3{margin:0 0 2px;font-size:1rem}
+.tl-item p{margin:0;font-size:.86rem;color:#5c564c;line-height:1.75}
+.photo-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+.photo-grid figure{margin:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+.photo-grid img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.photo-grid figcaption{font-size:.8rem;color:#5c564c;padding:8px 12px}
+.thread{margin-top:16px;display:flex;flex-direction:column;gap:10px}
+.post{max-width:92%;padding:11px 14px;border-radius:14px;font-size:.9rem;line-height:1.75}
+.post .pmeta{font-size:.72rem;color:var(--soft);margin-bottom:3px}
+.post.me{background:#eef3fa;align-self:flex-start;border-bottom-left-radius:4px}
+.post.staff{background:#fdf6e3;border:1px solid #e5cf9a;align-self:flex-end;border-bottom-right-radius:4px}
+.post img{border-radius:10px;margin-top:8px}
+.fform{margin-top:18px;border-top:1px solid var(--line);padding-top:16px}
+.fform textarea{width:100%;padding:12px;border:1.5px solid var(--line);border-radius:10px;font-family:inherit;font-size:.95rem;min-height:90px}
+.fform input[type=file]{margin-top:10px;font-family:inherit;font-size:.85rem}
+.share-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.btn.small{padding:8px 18px;font-size:.83rem}
+.diag-compare{font-size:.88rem;background:#faf8f3;border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin-top:12px;line-height:1.85}
+/* --- 第2弾追加：動画テキスト欄 --- */
+.movie .vtext{border-top:1px dashed var(--line);padding:14px 16px 18px;background:var(--paper)}
+.movie .vtext h4{font-family:var(--serif);font-size:.95rem;margin:14px 0 6px}
+.movie .vtext h4:first-child{margin-top:0}
+.movie .vtext p{font-size:.88rem;line-height:1.9;color:#4c463e;margin:0}
+.telop{background:#f2f6fb;border-left:3px solid var(--blue2);border-radius:0 10px 10px 0;padding:12px 14px;font-size:.88rem;line-height:2;white-space:pre-wrap;color:#37424e}
+.draft-tag{display:inline-block;font-size:.7rem;border:1px solid #c9a86a;color:#8a6a1f;background:#fdf6e3;border-radius:999px;padding:1px 9px;margin-left:8px;vertical-align:middle}
