@@ -5,6 +5,8 @@
   var OWNER = 'ELCzyeeoDCU4gveavc077L4jBqE3';
   var OWNER_EMAIL = 'zakka.lea@gmail.com';
   function isOwner(u){ return !!u && (u.uid === OWNER || u.email === OWNER_EMAIL); }
+  var STAFF_EMAILS = [];
+  function isEditor(u){ return isOwner(u) || (!!u && STAFF_EMAILS.indexOf(u.email) >= 0); }
   function memberKnown(){ try{ return !!localStorage.getItem('ohana_member'); }catch(e){ return false; } }
   function memberLabel(){ return memberKnown() ? 'ログイン' : '無料メンバー登録'; }
   function init(){
@@ -38,13 +40,13 @@
         }
         else location.href = memberKnown() ? LOGIN_URL + '#login' : LOGIN_URL;
       }
-      else if(isOwner(u) && window.__toggleSiteEdit){ window.__toggleSiteEdit(); }
+      else if(isEditor(u) && window.__toggleSiteEdit){ window.__toggleSiteEdit(); }
       else if(isOwner(u) && DOC){ location.href = 'member.html?id=' + DOC + '&edit=1'; }
       else location.href = 'mypage.html';
     });
     firebase.auth().onAuthStateChanged(function(u){
       if(!u){ btn.textContent = memberLabel(); return; }
-      btn.textContent = (isOwner(u)) ? (document.body.classList.contains('site-editing') ? '編集を終わる' : '✎ 編集する') : 'マイページ';
+      btn.textContent = (isEditor(u)) ? (document.body.classList.contains('site-editing') ? '編集を終わる' : '✎ 編集する') : 'マイページ';
       try{ localStorage.setItem('ohana_member', '1'); }catch(e){}
       if(isOwner(u) && DOC){
         var pv = document.querySelector('.hero-pv');
