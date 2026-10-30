@@ -73,6 +73,37 @@
 </section>
 <div class="band"></div>
 <section>
+<p class="en">My Profile</p>
+<h2>プロフィール登録</h2>
+<p class="lead">コミュニティページで紹介するための登録です。表示名は、本名でも店名でも、どちらでも大丈夫です。「みんなに公開する」を選ぶと、コミュニティページに紹介が載ります。</p>
+<form class="fform" id="profile-form">
+<label>表示名（名前・店名など）<input id="pf-name" maxlength="30" placeholder="例：Lea Mahalo（雑貨屋）" /></label>
+<label>アイコン写真<input type="file" id="pf-icon" accept="image/*" /></label>
+<p id="pf-icon-preview-wrap" style="display:none;margin:6px 0"><img id="pf-icon-preview" alt="アイコン" style="width:84px;height:84px;object-fit:cover;border-radius:50%" /></p>
+<label>業種<input id="pf-job" maxlength="30" placeholder="例：雑貨・古着の販売" /></label>
+<label>得意なこと<input id="pf-skill" maxlength="60" placeholder="例：古着のセレクト" /></label>
+<label>趣味<input id="pf-hobby" maxlength="60" placeholder="例：旅行・写真" /></label>
+<label>自己紹介<textarea id="pf-intro" maxlength="300" rows="3" placeholder="ひとこと自己紹介をどうぞ"></textarea></label>
+<label style="display:flex;gap:8px;align-items:center"><input type="checkbox" id="pf-public" style="width:auto" /> コミュニティページに載せる（みんなに公開する）</label>
+<p style="margin-top:12px"><button type="submit" class="btn fill" style="border:none;cursor:pointer;font-family:inherit">プロフィールを保存する</button> <span id="pf-msg" class="note"></span></p>
+</form>
+</section>
+<div class="band"></div>
+<section>
+<p class="en">My Posts</p>
+<h2>わたしの投稿（つぶやき・シェア）</h2>
+<p class="lead">ブログみたいに、写真とひとことを投稿できます。自分のヘアスタイルのシェアにもどうぞ。「みんなに公開する」を選ぶと、コミュニティページの「みんなの投稿」にも載ります。公開しない投稿は、あなたとスタッフだけが見られます。</p>
+<form class="fform" id="post-form">
+<label>ひとこと<textarea id="post-text" maxlength="500" rows="3" placeholder="例：今日のヘアスタイル。毛先を軽くしてもらいました"></textarea></label>
+<label>写真<input type="file" id="post-photo" accept="image/*" /></label>
+<label style="display:flex;gap:8px;align-items:center"><input type="checkbox" id="post-hair" style="width:auto" /> ヘアスタイルのシェアです</label>
+<label style="display:flex;gap:8px;align-items:center"><input type="checkbox" id="post-public" style="width:auto" /> みんなに公開する（コミュニティページに載せる）</label>
+<p style="margin-top:12px"><button type="submit" class="btn fill" style="border:none;cursor:pointer;font-family:inherit">投稿する</button> <span id="post-msg" class="note"></span></p>
+</form>
+<div id="post-list" style="margin-top:14px"><div class="empty-box">読み込んでいます…</div></div>
+</section>
+<div class="band"></div>
+<section>
 <p class="en">Hair Report Card</p>
 <h2>髪の成績表</h2>
 <div id="score-area"><div class="empty-box">読み込んでいます…</div></div>
