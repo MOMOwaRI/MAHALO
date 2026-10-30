@@ -254,19 +254,15 @@
       try{ if(!firebase.apps.length) initFb(); }catch(e){}
       loginMsg('');
       var provider = new firebase.auth.GoogleAuthProvider();
-      var ua = navigator.userAgent || '';
-      var useRedirect = /iPhone|iPad|iPod|Android/.test(ua);
-      if(useRedirect){
-        firebase.auth().signInWithRedirect(provider).catch(function(){ loginMsg('ログイン画面を開けませんでした。通信環境をご確認のうえ、もう一度お試しください。'); });
-      }else{
-        firebase.auth().signInWithPopup(provider).catch(function(err){
-          if(err && (err.code === 'auth/popup-blocked' || err.code === 'auth/operation-not-supported-in-this-environment' || err.code === 'auth/cancelled-popup-request')){
-            firebase.auth().signInWithRedirect(provider);
-          }else if(err && err.code !== 'auth/popup-closed-by-user'){
-            loginMsg('ログインできませんでした。もう一度お試しください。');
-          }
-        });
-      }
+      firebase.auth().signInWithPopup(provider).catch(function(err){
+        var code = err && err.code ? err.code : '';
+        if(code === 'auth/popup-blocked' || code === 'auth/operation-not-supported-in-this-environment' || code === 'auth/cancelled-popup-request' || code === 'auth/web-storage-unsupported'){
+          loginMsg('別画面でログインを開きます。そのまま進めてください。');
+          firebase.auth().signInWithRedirect(provider).catch(function(){ loginMsg('ログイン画面を開けませんでした。通信環境をご確認のうえ、もう一度お試しください。'); });
+        }else if(code !== 'auth/popup-closed-by-user'){
+          loginMsg('ログインできませんでした（' + (code || '通信エラー') + '）。もう一度お試しください。直らない場合は、この表示をそのまま教えてください。');
+        }
+      });
     }
     window.__mahaloLogin = doLogin;
     var loginBtn = $('google-login');
