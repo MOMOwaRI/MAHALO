@@ -18,6 +18,9 @@ if(!panel || !fabBot) return;
 function setPanel(open){ panel.hidden = !open; fabBot.setAttribute('aria-expanded', open ? 'true' : 'false'); }
 fabBot.addEventListener('click', function(){ setPanel(panel.hidden); });
 document.getElementById('chat-close').addEventListener('click', function(){ setPanel(false); });
+  document.addEventListener('click', function(ev){
+    if (!panel.hidden && !panel.contains(ev.target) && !fabBot.contains(ev.target)) setPanel(false);
+  });
 var log = document.getElementById('chat-log');
 var chipsBox = document.getElementById('chips');
 function addMsg(text, who){
