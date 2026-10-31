@@ -3,6 +3,7 @@
   var LINE_ID = '%40mahalo.hair';
   var PRODUCTS = [
     { id: 'nanosuppli-ga', name: 'ナノサプリ クレンジングシャンプー GA（グリーンアップル）1000ml' },
+    { id: 'arimino-moist', name: 'アリミノ カラーストーリー モイスト シャンプー 250mL' },
     { id: 'lashaddict', name: 'ラッシュアディクト（まつげ美容液）' },
     { id: 'refa', name: 'ReFa（リファ）商品 ※機種は備考にご記入ください' },
     { id: 'aujua', name: 'オージュア ホームケア ※ラインは備考にご記入ください' }
