@@ -15,6 +15,18 @@
     } catch (e) {}
     return true;
   }
+  function markOwnCard(uid) {
+    if (!uid) return;
+    var card = document.querySelector('[data-uid="' + uid + '"]');
+    if (!card || card.querySelector('.own-edit')) return;
+    var cbody = card.querySelector('.cbody');
+    if (!cbody) return;
+    var a = document.createElement('p');
+    a.className = 'own-edit';
+    a.style.marginTop = '10px';
+    a.innerHTML = '<a class="btn small" href="mypage.html">✎ 自分のプロフィールを編集する（マイページ）</a>';
+    cbody.appendChild(a);
+  }
   function renderProfiles() {
     var box = document.getElementById('member-cards');
     if (!box || !ensure()) return;
@@ -28,11 +40,12 @@
         if (p.skill) lines.push('得意：' + esc(p.skill));
         if (p.hobby) lines.push('趣味：' + esc(p.hobby));
         if (p.intro) lines.push(esc(p.intro));
-        html += '<div class="card">' +
+        html += '<div class="card" data-uid="' + d.id + '">' +
           (p.icon ? '<img src="' + p.icon + '" alt="' + esc(p.displayName || 'メンバー') + '" />' : '<img src="assets/img/building-front.jpg" alt="" />') +
           '<div class="cbody"><p class="en">Member</p><h3>' + esc(p.displayName || 'メンバー') + '</h3><p>' + lines.join('<br />') + '</p></div></div>';
       });
       box.innerHTML = html;
+      if (firebase.auth) firebase.auth().onAuthStateChanged(function (u) { if (u) markOwnCard(u.uid); });
     }).catch(function () {});
   }
   function renderPosts() {
