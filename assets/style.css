@@ -21,9 +21,10 @@ header.site{padding:34px 24px 10px;text-align:center}
 header.site .en{margin-bottom:6px}
 header.site h1{font-size:1.7rem;margin:0 0 4px}
 header.site .sub{font-size:.85rem;color:var(--soft);margin:0}
-nav.pagenav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:16px 16px 6px}
-nav.pagenav a{text-decoration:none;color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:.82rem;background:#fff}
-nav.pagenav a.now{background:var(--blue);border-color:var(--blue);color:#fff}
+nav.pagenav{display:flex;flex-wrap:wrap;gap:4px 16px;justify-content:center;align-items:center;padding:14px 12px 4px}
+nav.pagenav a{text-decoration:none;color:var(--ink);padding:4px 9px;font-size:.9rem;border-radius:6px}
+.pagenav span.now{padding:4px 9px;font-size:.9rem;color:var(--blue);font-weight:bold;border-bottom:2px solid var(--blue)}
+nav.pagenav a.now{color:var(--blue);font-weight:bold;border-bottom:2px solid var(--blue);border-radius:0}
 .hero{margin:18px 0 0}
 .hero img{width:100%;height:auto}
 .hero-cap{padding:10px 24px 0;font-size:.8rem;color:var(--soft);text-align:right}
