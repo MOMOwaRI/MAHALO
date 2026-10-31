@@ -4,6 +4,12 @@ import { initializeAppCheck, ReCaptchaEnterpriseProvider } from "https://www.gst
 import { getAI, getGenerativeModel, GoogleAIBackend } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-ai.js";
 import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-firestore.js";
 var SYS = window.__botSYS || "";
+/* 多言語対応：サイトで選んだ言語で答える（i18n.js が localStorage 'mahalo-lang' を管理） */
+try {
+  var _bl = localStorage.getItem('mahalo-lang') || 'ja';
+  var _bn = { en: 'English', zh: '简体中文', ko: '한국어' }[_bl];
+  if (_bn) SYS += "\n\n・回答は必ず " + _bn + " で書いてください（お店の名前や住所などの固有名詞はそのままで構いません）。";
+} catch (e) {}
 try {
   var aiApp = initializeApp({
   apiKey: "AIzaSyAdq6e71I-1XsBHOsMc4Q_djsHlecqQKcQ",
