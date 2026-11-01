@@ -11,6 +11,9 @@
 
   /* 辞書：日本語 → [en, zh, ko] */
   var D = {
+    'OHANA島を歩く': ['Walk OHANA Island', '漫步OHANA岛', 'OHANA섬 걷기'],
+    'MAHALOのまわりを水彩の絵で歩ける「もうひとつの四国」。このまま下の画面で歩けます。': ['Another Shikoku in watercolor, around MAHALO. You can walk right here in the frame below.', '在MAHALO周边、可以用水彩画漫步的“另一个四国”。可以直接在下面的画面里行走。', 'MAHALO 주변을 수채화로 걸을 수 있는 “또 하나의 시코쿠”. 아래 화면에서 바로 걸을 수 있습니다.'],
+    'OHANA島を大きく開く': ['Open OHANA Island full size', '全屏打开OHANA岛', 'OHANA섬 크게 열기'],
     '入口・リンク集': ['Home & Links', '首页・链接集', '입구・링크 모음'],
     'セレクト商品': ['Select Items', '精选商品', '셀렉트 상품'],
     '技術・メニュー': ['Techniques & Menu', '技术与菜单', '기술・메뉴'],
