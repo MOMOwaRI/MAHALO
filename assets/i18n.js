@@ -1,10 +1,15 @@
 /* MAHALO 多言語対応：日本語／English／中文（简体）／한국어
    固定UI文言を辞書で差し替える方式。本人がその場編集で保存した文章（siteTextsで上書きされる文）は対象外。
-   選択は localStorage 'mahalo-lang' に保存。bot は bot-ai.js がこの値を読んで回答言語を指示する。 */
+   言語は localStorage 'mahalo-lang' に保存し、未保存（初回）はブラウザの言語設定で自動判定する。セレクタはフッター付近に小さく置く。
+   bot は bot-ai.js がこの値を読んで回答言語を指示する。 */
 (function () {
   var LANGS = { ja: '日本語', en: 'English', zh: '中文（简体）', ko: '한국어' };
-  var lang = 'ja';
-  try { lang = localStorage.getItem('mahalo-lang') || 'ja'; } catch (e) {}
+  var lang = null;
+  try { lang = localStorage.getItem('mahalo-lang'); } catch (e) {}
+  if (!lang) { /* 初回はブラウザの言語設定で自動判定（本人が一度選んだら保存を優先） */
+    var bl = ((navigator.languages && navigator.languages[0]) || navigator.language || 'ja').toLowerCase();
+    lang = bl.indexOf('en') === 0 ? 'en' : bl.indexOf('zh') === 0 ? 'zh' : bl.indexOf('ko') === 0 ? 'ko' : 'ja';
+  }
   if (!LANGS[lang]) lang = 'ja';
   window.MAHALO_LANG = lang;
   document.documentElement.lang = lang === 'ja' ? 'ja' : lang === 'zh' ? 'zh-CN' : lang;
@@ -179,12 +184,13 @@
   }
 
   function buildSelector() {
+    /* セレクタは目立つ場所に置かず、フッター付近に小さく出す（2026-11-03本人指示） */
     var box = document.createElement('div');
     box.id = 'lang-box';
-    box.style.cssText = 'position:fixed;top:10px;left:10px;z-index:1200;background:rgba(255,255,255,.92);border:1px solid #d8c7ae;border-radius:999px;padding:4px 8px;font-size:.85rem;box-shadow:0 2px 8px rgba(90,70,50,.15);display:flex;gap:4px;align-items:center';
+    box.style.cssText = 'margin:10px auto 2px;text-align:center;font-size:.78rem;color:#8a7663;display:flex;gap:4px;align-items:center;justify-content:center';
     var sel = document.createElement('select');
     sel.setAttribute('aria-label', 'Language');
-    sel.style.cssText = 'border:none;background:transparent;font:inherit;color:#5a4632;cursor:pointer;outline:none';
+    sel.style.cssText = 'border:1px solid #e3d5c0;border-radius:6px;background:#fff;font:inherit;color:#8a7663;cursor:pointer;outline:none;padding:1px 4px';
     Object.keys(LANGS).forEach(function (k) {
       var o = document.createElement('option');
       o.value = k; o.textContent = LANGS[k];
@@ -197,7 +203,9 @@
     });
     box.appendChild(document.createTextNode('🌐'));
     box.appendChild(sel);
-    document.body.appendChild(box);
+    var foot = document.querySelector('footer');
+    if (foot) foot.appendChild(box);
+    else document.body.appendChild(box);
   }
 
   function init() {
