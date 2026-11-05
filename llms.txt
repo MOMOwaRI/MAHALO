@@ -1,0 +1,50 @@
+# hair ID salon MAHALO（マハロ）
+
+> 愛媛県松山市味酒町のトータルビューティーサロン。MAHALOビル（2F 美容室 MAHALO／1F 女性限定美容室 elua Mahalo・まつげパーマ専門 Eyes MAHALO・雑貨屋 Lea Mahalo）。「MAHALO」はハワイ語で『ありがとう』。すべては感謝の心から始まる、が理念です。
+
+## 店舗情報
+- 住所：〒790-0814 愛媛県松山市味酒町3-2-29 MAHALOビル
+- 電話：MAHALO（2F）089-934-1455／elua Mahalo（1F）089-934-1587
+- 営業時間：MAHALO 受付9:00〜18:00（定休日：月曜）。予約優先制で、当日予約はできないため前日までに予約が必要
+- アクセス：伊予鉄道・古町駅から徒歩約3分。駐車場3台
+- 公式サイト：https://www.hair-mahalo.com/
+- 公式LINE：@mahalo.hair（elua Mahalo は @elua）
+
+## 特徴
+- 煌水（キラ水）：テラヘルツ機能水を使った施術・ヘッドスパ
+- 抗アレルギーカラー：カラー剤でかぶれた経験がある方向け
+- ベル・ジュバンス：髪と肌と同じ弱酸性のパーマ
+- 髪質改善・オージュア：髪の状態に合わせたトリートメント提案
+
+## メニューと料金（2F MAHALO・税込）
+- カット：レディース ¥5,280／メンズ ¥4,840／学生 ¥4,290／中学生 ¥3,740／小学生 ¥3,190
+- カラー：¥6,270〜／リタッチ ¥5,940／香草カラー ¥7,260
+- パーマ：¥11,440〜／デジタルパーマ ¥14,740／ベル・ジュバンス ¥14,300
+- ストレートパーマ：¥16,940〜
+- ヘッドスパ：煌水・ベルジュバンス・オージュア 各¥4,730
+- 詳しくは https://momowari.github.io/MAHALO/menu.html
+
+## 取り扱い商品（セレクト商品）
+- ウエラ アルタイム リペア（ミラクルナイトトリートメント／ミラクルヘアトリートメント／ミラクルヘアオイル）各 ¥4,598
+- ミルボン プラーミア クリアスパフォーム ¥3,025／ミズリセ ウォータージェルトリートメント ¥3,300／ニゼル ドレシア ミラーフィルター ¥2,420
+- サンコール R-21 シャンプー EX ¥3,278、ボタニエンス トリートメント、ファルジュア ラスティングマスク
+- ナプラ ナシード スキャルプトナー ¥1,100／ケアテクト HB エアリーメイク ¥935
+- デミ ビオーブ フォルスナリシング ジェット ¥7,590
+- TOUQU to tone シュガーソープ（洗顔石けん）¥4,180
+- soaddicted ブロウアディクト（眉毛美容液）¥11,000／ラッシュアディクト マスカラ ¥4,400／ラッシュアディクト（まつげ美容液）
+- ReFa、オージュア ホームケア、アリミノ カラーストーリー モイスト シャンプー、サニープレイス ナノサプリ GA ほか
+- 各商品の「こんな人におすすめ」と価格：https://momowari.github.io/MAHALO/select.html
+- 購入は店頭受け取りが基本。発送は個別案内
+
+## ページ一覧
+- トップ（店舗情報・特徴・料金要点・FAQ・予約案内）：https://momowari.github.io/MAHALO/
+- セレクト商品：https://momowari.github.io/MAHALO/select.html
+- 技術・メニュー：https://momowari.github.io/MAHALO/menu.html
+- 髪質診断：https://momowari.github.io/MAHALO/diagnosis.html
+- 紹介動画：https://momowari.github.io/MAHALO/movies.html
+- マイページ（会員専用）：https://momowari.github.io/MAHALO/mypage.html
+- コミュニティ：https://momowari.github.io/MAHALO/community.html
+
+## 関連
+- Eyes MAHALO（まつげパーマ専門）：https://momowari.github.io/Eyes-MAHALO/
+- Lea Mahalo（雑貨屋）：https://momowari.github.io/Lea-Mahalo/
