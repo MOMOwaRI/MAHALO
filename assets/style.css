@@ -82,6 +82,7 @@ footer .fname{font-family:var(--serif);color:var(--ink);font-size:1rem}
 .dform select{width:100%;padding:12px;border:1.5px solid var(--line);border-radius:10px;font-size:1rem;font-family:inherit;background:#fff}
 /* chat bot（OHANA実装の移植・色はMAHALOブルー） */
 .fab-stack{position:fixed;right:max(14px,calc(50% - 374px));bottom:14px;z-index:95;display:flex;flex-direction:column;gap:8px;align-items:flex-end}
+.fab-tel{display:inline-flex;align-items:center;gap:8px;background:#fff;color:#0068B7;border:2px solid #3390CC;border-radius:999px;padding:9px 18px;font-family:inherit;font-weight:bold;font-size:.88rem;cursor:pointer;box-shadow:0 6px 16px rgba(29,78,137,.25);text-decoration:none}
 .fab-line{display:inline-flex;align-items:center;gap:8px;background:#06C755;color:#fff;border:none;border-radius:999px;padding:11px 18px;font-family:inherit;font-weight:bold;font-size:.88rem;cursor:pointer;box-shadow:0 6px 16px rgba(6,160,80,.35);text-decoration:none}
 .fab-bot{display:inline-flex;align-items:center;gap:8px;background:var(--blue);color:#fff;border:none;border-radius:999px;padding:11px 18px;font-family:inherit;font-weight:bold;font-size:.88rem;cursor:pointer;box-shadow:0 6px 16px rgba(29,78,137,.35)}
 .chat-panel{position:fixed;right:max(12px,calc(50% - 372px));bottom:14px;z-index:97;width:min(360px,calc(100vw - 24px));background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:0 14px 40px rgba(60,50,30,.25);padding:14px}

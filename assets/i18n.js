@@ -43,6 +43,7 @@
     'リンク先（URL）': ['Link URL', '链接地址(URL)', '링크 주소(URL)'],
     '表示する文字': ['Display text', '显示文字', '표시 문자'],
     'LINEで聞く': ['Ask on LINE', '在LINE咨询', 'LINE으로 문의'],
+    '電話する': ['Call us', '拨打电话', '전화하기'],
     'MAHALOに質問する': ['Ask MAHALO', '向MAHALO提问', 'MAHALO에 질문'],
     '公式サイトを見る': ['View official site', '查看官网', '공식 사이트 보기'],
     'よくある質問に自動で答えます。分からないことは、お店に直接聞いてください。': ['Automatically answers common questions. For anything else, please ask the salon directly.', '自动回答常见问题。其他问题请直接咨询店铺。', '자주 묻는 질문에 자동 답변합니다. 그 외는 매장에 직접 문의해 주세요.'],
