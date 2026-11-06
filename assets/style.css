@@ -228,3 +228,11 @@ th.fi-spark{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A
 .pdots{position:absolute;right:10px;bottom:9px;display:flex;gap:5px}
 .pdots span{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.55);box-shadow:0 0 3px rgba(0,0,0,.3)}
 .pdots span.on{background:#fff}
+
+.crumbs{font-size:.78rem;color:var(--soft);margin:12px 2px 0}
+.crumbs a{color:var(--blue2);text-decoration:none}
+.pageintro{border:1px solid var(--line);border-radius:10px;padding:8px 14px;margin:10px 0 4px;background:#fffdf8}
+.pageintro summary{cursor:pointer;font-size:.82rem;color:var(--blue2);font-weight:bold}
+.pageintro p{font-size:.82rem;color:#5c564c;line-height:1.75;margin:6px 0 4px}
+.backtop{margin:28px 2px 0;font-size:.85rem}
+.backtop a{color:var(--blue2);text-decoration:none}
