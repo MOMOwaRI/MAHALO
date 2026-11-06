@@ -236,3 +236,11 @@ th.fi-spark{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A
 .pageintro p{font-size:.82rem;color:#5c564c;line-height:1.75;margin:6px 0 4px}
 .backtop{margin:28px 2px 0;font-size:.85rem}
 .backtop a{color:var(--blue2);text-decoration:none}
+
+.cmvids{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px;align-items:start}
+@media(max-width:560px){.cmvids{grid-template-columns:1fr}}
+.cmvid{margin:0}
+.cmvid video{width:100%;height:auto;display:block;border-radius:12px;background:#111;cursor:pointer}
+.cmvid figcaption{font-size:.75rem;color:var(--soft);margin-top:6px;line-height:1.65}
+.card .card-video{width:100%;height:auto;display:block;border-radius:10px;margin-top:12px;background:#111;cursor:pointer}
+.vid-note{font-size:.72rem;color:var(--soft);margin-top:4px;line-height:1.65}
