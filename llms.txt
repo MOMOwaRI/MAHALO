@@ -40,10 +40,10 @@
 - トップ（店舗情報・特徴・料金要点・FAQ・予約案内）：https://momowari.github.io/MAHALO/
 - セレクト商品：https://momowari.github.io/MAHALO/select.html
 - 技術・メニュー：https://momowari.github.io/MAHALO/menu.html
-- 髪質診断：https://momowari.github.io/MAHALO/diagnosis.html
-- 紹介動画：https://momowari.github.io/MAHALO/movies.html
+- 髪質診断（7つの質問に答えると、おすすめメニューとホームケアを提案。提案されるのは煌水トリートメント／ベル・ジュバンス弱酸性メニュー／オージュア トリートメント／髪質改善トリートメント／抗アレルギーカラー／香草カラー／ヘッドスパと、ホームケアのオージュアライン・ReFa・ラッシュアディクト）：https://momowari.github.io/MAHALO/diagnosis.html
+- 紹介動画（各店の紹介アニメーション＋AI生成のCM動画2本：MAHALOビル外観とラッシュアディクト。動画内の文字起こしも掲載）：https://momowari.github.io/MAHALO/movies.html
 - マイページ（会員専用）：https://momowari.github.io/MAHALO/mypage.html
-- コミュニティ：https://momowari.github.io/MAHALO/community.html
+- コミュニティ（MAHALO会員の紹介ページ。会員が登録した業種・得意の紹介カードと、コメント・質問欄。交流はLINEオープンチャット「松山＊MAHALOグループ」でも可）：https://momowari.github.io/MAHALO/community.html
 
 ## 関連
 - Eyes MAHALO（まつげパーマ専門）：https://momowari.github.io/Eyes-MAHALO/
