@@ -244,3 +244,12 @@ th.fi-spark{background-image:url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A
 .cmvid figcaption{font-size:.75rem;color:var(--soft);margin-top:6px;line-height:1.65}
 .card .card-video{width:100%;height:auto;display:block;border-radius:10px;margin-top:12px;background:#111;cursor:pointer}
 .vid-note{font-size:.72rem;color:var(--soft);margin-top:4px;line-height:1.65}
+
+.hmenu{position:fixed;top:8px;left:max(8px,calc(50% - 368px));z-index:90;font-family:"Hiragino Mincho ProN","Yu Mincho",serif}
+.hmenu-btn{display:flex;align-items:center;justify-content:center;width:42px;height:42px;font-size:21px;color:#0068B7;background:rgba(255,255,255,.92);border-radius:50%;cursor:pointer;line-height:1;user-select:none;-webkit-user-select:none;box-shadow:0 2px 8px rgba(30,50,80,.16)}
+.hmenu-panel{position:fixed;top:56px;left:max(10px,calc(50% - 366px));background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:0 8px 24px rgba(30,50,80,.14);padding:8px 0;min-width:216px;opacity:0;transform:translateY(-4px);transition:opacity .18s ease,transform .18s ease}
+.hmenu-panel.open{opacity:1;transform:translateY(0)}
+.hmenu-panel[hidden]{display:none!important}
+.hmenu-panel a{display:block;padding:10px 18px;font-size:15px;color:var(--ink);text-decoration:none;line-height:1.5}
+.hmenu-panel a:active,.hmenu-panel a:hover{background:#eef5fb}
+.hmenu-panel a.now{color:#0068B7;font-weight:bold}
