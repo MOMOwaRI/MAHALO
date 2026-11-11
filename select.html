@@ -518,6 +518,15 @@
 .ttags{display:flex;flex-wrap:wrap;gap:5px;margin:8px 0 2px}
 .ttags span{font-size:12px;color:#0068B7;border:1px solid #bcd6ea;border-radius:999px;padding:2px 9px;background:#f4f9fc}
 
+
+#productGrid{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
+#productGrid .card{margin:0}
+#productGrid .cbody{padding:10px 12px 12px}
+#productGrid .cbody h3{font-size:15px;line-height:1.5}
+#productGrid .cbody p{font-size:13px}
+#productGrid .price{font-size:15px}
+#productGrid .ttags span{font-size:11px;padding:1px 7px}
+@media (max-width:360px){#productGrid{gap:10px}}
 </style>
 </head>
 <body>
