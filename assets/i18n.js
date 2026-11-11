@@ -16,6 +16,21 @@
 
   /* 辞書：日本語 → [en, zh, ko] */
   var D = {
+    'すべて': ['All', '全部', '전체'],
+    'シャンプー': ['Shampoo', '洗发水', '샴푸'],
+    'トリートメント': ['Treatment', '护发素·发膜', '트리트먼트'],
+    '洗い流さないケア': ['Leave-in Care', '免洗护理', '씻어내지 않는 케어'],
+    '頭皮ケア': ['Scalp Care', '头皮护理', '두피 케어'],
+    'スタイリング': ['Styling', '造型', '스타일링'],
+    'まつげ・眉・メイク': ['Lashes, Brows & Makeup', '睫毛·眉毛·彩妆', '속눈썹·눈썹·메이크업'],
+    'その他': ['Others', '其他', '기타'],
+    '商品名・キーワードで探す': ['Search by name or keyword', '按商品名或关键词搜索', '상품명·키워드로 검색'],
+    '並び替え': ['Sort', '排序', '정렬'],
+    'おすすめ順': ['Recommended', '推荐顺序', '추천순'],
+    '価格の安い順': ['Price: Low to High', '价格从低到高', '가격 낮은 순'],
+    '価格の高い順': ['Price: High to Low', '价格从高到低', '가격 높은 순'],
+    '価格が分かるものだけ': ['With price only', '只看有价格的', '가격이 있는 것만'],
+    '条件に合う商品がありませんでした': ['No items matched your filters', '没有符合条件的商品', '조건에 맞는 상품이 없습니다'],
     'OHANA島を歩く': ['Walk OHANA Island', '漫步OHANA岛', 'OHANA섬 걷기'],
     'MAHALOのまわりを水彩の絵で歩ける「もうひとつの四国」。このまま下の画面で歩けます。': ['Another Shikoku in watercolor, around MAHALO. You can walk right here in the frame below.', '在MAHALO周边、可以用水彩画漫步的“另一个四国”。可以直接在下面的画面里行走。', 'MAHALO 주변을 수채화로 걸을 수 있는 “또 하나의 시코쿠”. 아래 화면에서 바로 걸을 수 있습니다.'],
     'OHANA島を大きく開く': ['Open OHANA Island full size', '全屏打开OHANA岛', 'OHANA섬 크게 열기'],
