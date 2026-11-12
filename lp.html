@@ -90,6 +90,15 @@
   .sea .note{margin-top:22px;font-size:15px;line-height:2;opacity:.96}
   .gate{background:var(--cream)}
   .gate .big{color:var(--blue)}
+.nextstep{margin-top:40px;text-align:center}
+.nextstep a{color:var(--blue);font-size:14px;letter-spacing:.14em;text-decoration:none;border-bottom:1px solid var(--gold);padding-bottom:5px}
+.empathy{background:#fff}
+.close{background:var(--blue);color:#fff;text-align:center}
+.close .big{color:#fff}
+.close .note{margin-top:22px;font-size:14px;line-height:2.1}
+.cta-btn{display:inline-block;margin-top:34px;background:#fff;color:var(--blue);padding:17px 46px;font-size:16px;letter-spacing:.14em;text-decoration:none;border-radius:999px;font-weight:600}
+.close .tel{margin-top:24px;font-size:14px;letter-spacing:.1em}
+
   .info{margin-top:28px;font-size:15px;line-height:2.2}
   .aio{background:#fff;padding:48px 30px 120px;font-size:12px;line-height:2;color:#5a6a73}
   .fade{opacity:0;transform:translateY(18px);transition:opacity 1s ease-out,transform 1s ease-out}
@@ -124,16 +133,23 @@
     <p class="main">MAHALOは、<br>ハワイの言葉で<br>「ありがとう」。</p>
     <div class="rule"></div>
   </section>
+  <section class="band empathy fade">
+    <p class="label">FOR YOU</p>
+    <p class="big">髪や頭皮のことで、<br>困っていませんか。</p>
+    <p class="sub">カラーでかぶれたことがある。髪の傷みが気になる。<br>MAHALOは、そういう髪のための技術をそろえた美容室です。</p>
+    <p class="nextstep"><a href="#strength">できることを見る</a></p>
+  </section>
   <section class="band forest fade">
     <p class="label">FOREST</p>
     <p class="big">街の中に、森。</p>
     <p class="sub">風と、光と、緑と。木のカウンターと、奥の壁の森の絵。<br>椅子に座る前から、ほっとできる場所です。</p>
+    <p class="nextstep"><a href="#strength">MAHALOの強みを見る</a></p>
   </section>
   <img class="photo" src="https://momowari.github.io/MAHALO/assets/img-lp/wc-forest.jpg" alt="奥の壁の森の絵と、椅子が一列に並ぶ店内（水彩）" loading="lazy">
 
   <!-- ③ 森→波：薄い青＝髪の健康と、MAHALOの強み・他店との違い -->
   <svg class="wave" viewBox="0 0 720 56" preserveAspectRatio="none" aria-hidden="true"><path d="M0,32 C120,8 240,52 360,30 C480,8 600,48 720,26 L720,56 L0,56 Z" fill="#e8f4f8"/></svg>
-  <section class="band skills fade" style="padding-top:30px">
+  <section class="band skills fade" id="strength" style="padding-top:30px">
     <p class="label">STRENGTH</p>
     <p class="big">髪の健康から、きれいは始まる。</p>
     <p class="sub">MAHALOの強みは、髪と頭皮を整える技術がそろっていることです。傷めないことを土台に、似合う髪へ。</p>
@@ -145,6 +161,7 @@
       <p><b>ヘッドスパ</b> ― 頭皮から整える。ニオイ・ベタつきにも</p>
       <p><b>ベテランスタイリスト</b> ― 髪の状態を見て、一人ひとりに合わせます</p>
     </div>
+    <p class="nextstep"><a href="https://line.me/R/oaMessage/@mahalo.hair/?MAHALO%E3%81%AE%E3%83%9A%E3%83%BC%E3%82%B8%E3%81%8B%E3%82%89%E6%9D%A5%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82%E4%BA%88%E7%B4%84%E3%83%BB%E7%9B%B8%E8%AB%87%E3%82%92%E3%81%8A%E9%A1%98%E3%81%84%E3%81%97%E3%81%BE%E3%81%99%E3%80%82">LINEで相談・予約する</a></p>
   </section>
 
   <!-- ④ 海：ゆっくり移ろうグラデーション、理念 -->
@@ -158,7 +175,7 @@
   <!-- ⑤ 入口：外観の実写真（単独1枚、来店時に分かるように）＋生成り -->
   <img class="photo" src="https://momowari.github.io/img/mahalo-4.jpg" alt="店内の緑のコーナー（水彩）">
   <svg class="wave" viewBox="0 0 720 56" preserveAspectRatio="none" aria-hidden="true" style="background:#ffffff"><path d="M0,30 C120,52 260,10 380,28 C500,46 620,12 720,30 L720,56 L0,56 Z" fill="#f7f3e8"/></svg>
-  <section class="band gate fade" style="padding-top:30px">
+  <section class="band gate fade" id="access" style="padding-top:30px">
     <p class="label">ACCESS</p>
     <p class="big">まずは、公式サイトで。</p>
     <div class="info">
@@ -171,6 +188,13 @@
     </div>
   </section>
 
+  <section class="band close fade">
+    <p class="label" style="color:#dceefb">RESERVATION</p>
+    <p class="big">ご予約は、LINEから。</p>
+    <p class="note">ご予約は前日までにお願いします（当日予約はできません）<br>受付 9:00〜18:00／月曜定休</p>
+    <a class="cta-btn" href="https://line.me/R/oaMessage/@mahalo.hair/?MAHALO%E3%81%AE%E3%83%9A%E3%83%BC%E3%82%B8%E3%81%8B%E3%82%89%E6%9D%A5%E3%81%BE%E3%81%97%E3%81%9F%E3%80%82%E4%BA%88%E7%B4%84%E3%83%BB%E7%9B%B8%E8%AB%87%E3%82%92%E3%81%8A%E9%A1%98%E3%81%84%E3%81%97%E3%81%BE%E3%81%99%E3%80%82">LINEで予約する</a>
+    <p class="tel">お電話でもどうぞ　089-934-1455</p>
+  </section>
   <!-- AIO文章版 -->
   <section class="aio">
     <p>hair ID salon MAHALOは、愛媛県松山市味酒町3-2-29 MAHALOビル2Fにある美容室です。店名のMAHALOはハワイ語で「ありがとう」という意味で、理念は「すべては感謝の心から始まる」です。店内は「街の中の森」をテーマにした風と光と緑の空間です。髪と頭皮の健康を大切にしているのが特徴で、テラヘルツ機能水の煌水（キラ水）、カラーでかぶれた経験がある方のための抗アレルギーカラー、髪と肌と同じ弱酸性パーマのベル・ジュバンス、髪質改善・オージュア、ヘッドスパがあり、ベテランスタイリストが一人ひとりの髪の状態に合わせて施術します。ご予約は前日まで（当日予約不可）で、LINEまたはお電話（089-934-1455）で受け付けています。受付時間は9:00〜18:00、定休日は月曜です。アクセスは伊予鉄道・古町駅から徒歩約3分、駐車場があります。同じMAHALOビル1Fには、女性限定美容室 elua Mahalo、まつげパーマ専門 Eyes MAHALO、雑貨屋 Lea Mahalo があります。詳しいメニューと料金は公式サイト（hair-mahalo.com）にあります。このページはMAHALOの大枠を伝えるLPです。</p>
