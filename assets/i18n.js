@@ -16,6 +16,7 @@
 
   /* 辞書：日本語 → [en, zh, ko] */
   var D = {
+    '店頭で受け取り＆支払い': ['Pick up & pay in store', '到店取货付款', '매장에서 수령·결제'],
     'LINE・フォームで注文': ['Order via LINE or form', '通过LINE或表单下单', 'LINE·폼으로 주문'],
     '店頭で受け取り＆お支払い': ['Pick up & pay in store', '到店取货付款', '매장에서 수령·결제'],
     'ログイン不要': ['No sign-in needed', '无需登录', '로그인 불필요'],
