@@ -54,7 +54,7 @@
   // カゴバー
   var bar = document.createElement('div');
   bar.id = 'cart-bar';
-  bar.style.cssText = 'position:fixed;left:10px;top:60px;z-index:110;display:none;background:#0068B7;color:#fff;border-radius:999px;padding:10px 18px;box-shadow:0 10px 30px rgba(30,40,60,.3);font-size:.9rem;align-items:center;gap:12px;max-width:92vw';
+  bar.style.cssText = 'position:fixed;left:10px;bottom:14px;z-index:110;display:none;background:#0068B7;color:#fff;border-radius:12px;padding:10px 14px;box-shadow:0 10px 30px rgba(30,40,60,.3);font-size:.9rem;align-items:center;gap:12px;max-width:92vw';
   bar.innerHTML = '<span id="cart-count"></span><button type="button" id="cart-open" style="background:#fff;color:#0068B7;border:none;border-radius:999px;padding:7px 14px;font-weight:bold;font-family:inherit;cursor:pointer">注文する</button>';
   document.body.appendChild(bar);
   // パネル
