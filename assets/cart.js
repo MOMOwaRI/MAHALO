@@ -54,8 +54,9 @@
   // カゴバー
   var bar = document.createElement('div');
   bar.id = 'cart-bar';
-  bar.style.cssText = 'position:fixed;left:10px;bottom:14px;z-index:110;display:none;background:#0068B7;color:#fff;border-radius:12px;padding:10px 14px;box-shadow:0 10px 30px rgba(30,40,60,.3);font-size:.9rem;align-items:center;gap:12px;max-width:92vw';
-  bar.innerHTML = '<span id="cart-count"></span><button type="button" id="cart-open" style="background:#fff;color:#0068B7;border:none;border-radius:999px;padding:7px 14px;font-weight:bold;font-family:inherit;cursor:pointer">注文する</button>';
+  bar.style.cssText = 'position:fixed;left:10px;bottom:14px;z-index:110;display:none;background:#0068B7;color:#fff;border-radius:12px;padding:11px 12px;cursor:pointer;box-shadow:0 10px 30px rgba(30,40,60,.3);font-size:.9rem;align-items:center;gap:12px;max-width:92vw';
+  bar.setAttribute('aria-label','カゴを開く'); bar.title='カゴを開く';
+  bar.innerHTML = '<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1.6"/><circle cx="19" cy="21" r="1.6"/><path d="M2.5 3h2l2.6 12.5a2 2 0 0 0 2 1.5h8.9a2 2 0 0 0 2-1.6L21.5 7H6"/></svg><span id="cart-count" style="position:absolute;top:-7px;right:-7px;background:#d33;color:#fff;border-radius:999px;min-width:20px;height:20px;line-height:20px;text-align:center;font-size:12px;font-weight:bold;padding:0 4px;box-sizing:border-box"></span>';
   document.body.appendChild(bar);
   // パネル
   var panel = document.createElement('div');
@@ -83,7 +84,7 @@
   function render() {
     var n = count();
     bar.style.display = n ? 'inline-flex' : 'none';
-    document.getElementById('cart-count').textContent = 'カゴ：' + n + '点';
+    document.getElementById('cart-count').textContent = n;
     var box = document.getElementById('cart-items');
     if (!n) { box.innerHTML = 'カゴは空です。'; return; }
     box.innerHTML = Object.keys(cart).map(function (k) {
@@ -102,7 +103,7 @@
       });
     });
   }
-  document.getElementById('cart-open').addEventListener('click', function () { panel.style.display = 'flex'; render(); });
+  bar.addEventListener('click', function () { panel.style.display = 'flex'; render(); });
   document.getElementById('cart-close').addEventListener('click', function () { panel.style.display = 'none'; });
   panel.addEventListener('click', function (e) { if (e.target === panel) panel.style.display = 'none'; });
   document.getElementById('cart-line').addEventListener('click', function () {
