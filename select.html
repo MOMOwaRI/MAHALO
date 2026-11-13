@@ -533,11 +533,11 @@
 .more>summary::before{content:"＋ "}
 .more[open ]>summary::before{content:"－ "}
 .more p{margin-top:8px}
-.howto{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:14px 0 4px}
-.hstep{display:flex;align-items:center;gap:7px}
+.howto{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:start;gap:4px;margin:14px 0 4px}
+.hstep{display:flex;flex-direction:column;align-items:center;text-align:center;gap:5px}
 .hnum{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:50%;background:#0068B7;color:#fff;font-weight:bold;font-size:14px;flex:none}
-.htxt{font-size:13px;font-weight:bold;color:#333}
-.harrow{color:#9db8cc;font-weight:bold}
+.htxt{font-size:12px;font-weight:bold;color:#333;line-height:1.45}
+.harrow{color:#9db8cc;font-weight:bold;padding-top:4px}
 .nologin{margin:6px 0 0;font-size:13px;color:#333}
 .nlbadge{display:inline-block;border:1.5px solid #0068B7;color:#0068B7;border-radius:999px;padding:1px 10px;font-weight:bold;font-size:12px;margin-right:7px;background:#f4f9fc}
 </style>
@@ -555,13 +555,11 @@
 <details class="pageintro"><summary>このページについて</summary><p>このページは、MAHALOで取り扱うセレクト商品の一覧です。気になる商品はカゴに入れて、LINEまたは注文フォームから取り置き・注文ができます（お渡しは店頭が基本です）。商品の写真は実物写真を掲載しています（メーカー公式画像の無断転載はしていません）。</p></details>
 
 <section>
-<p class="en">Select Items</p>
-<h2>MAHALOセレクト商品</h2>
 <p class="lead">初めての方も、商品だけのご購入で来店OKです。お悩みに合わせたカウンセリングもできます。</p>
 <div class="howto" aria-label="購入の流れ">
 <div class="hstep"><span class="hnum">1</span><span class="htxt">カゴに入れる</span></div><span class="harrow">→</span>
 <div class="hstep"><span class="hnum">2</span><span class="htxt">LINE・フォームで注文</span></div><span class="harrow">→</span>
-<div class="hstep"><span class="hnum">3</span><span class="htxt">店頭で受け取り＆お支払い</span></div>
+<div class="hstep"><span class="hnum">3</span><span class="htxt">店頭で受け取り＆支払い</span></div>
 </div>
 <p class="nologin"><span class="nlbadge">ログイン不要</span>会員登録しなくても、そのまま購入できます</p>
 <h2 style="margin-top:34px">取り扱い商品</h2>
