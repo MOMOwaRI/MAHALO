@@ -544,25 +544,18 @@
 <h1>MAHALOセレクト商品</h1>
 <p class="sub">松山市味酒町3-2-29 MAHALOビル</p>
 </header>
-<nav class="pagenav"><a href="index.html">入口・リンク集</a>
-<a href="select.html" class="now">セレクト商品</a>
-<a href="menu.html">技術・メニュー</a>
-<a href="diagnosis.html">髪質診断</a>
-<a href="movies.html">紹介動画</a>
-<a href="mypage.html">マイページ</a>
-<a href="community.html">コミュニティ</a><a href="https://www.hair-mahalo.com/" target="_blank" rel="noopener">公式サイト</a></nav>
 <nav class="crumbs"><a href="index.html">トップ</a> ＞ セレクト商品</nav>
-<details class="pageintro"><summary>このページについて</summary><p>このページは、MAHALOで取り扱うセレクト商品の一覧です。気になる商品はカゴに入れて、LINEまたは注文フォームから取り置き・注文ができます（お渡しは店頭が基本です）。</p></details>
+<details class="pageintro"><summary>このページについて</summary><p>このページは、MAHALOで取り扱うセレクト商品の一覧です。気になる商品はカゴに入れて、LINEまたは注文フォームから取り置き・注文ができます（お渡しは店頭が基本です）。商品の写真は実物写真を掲載しています（メーカー公式画像の無断転載はしていません）。</p></details>
 
 <section>
 <p class="en">Select Items</p>
 <h2>MAHALOセレクト商品</h2>
-<p class="lead">お店で取り扱っている商品と、大事にしている技術の紹介です。商品の実物写真は、スタッフが「写真・資料受付箱」に投げた写真を順に掲載しています。まだ写真が届いていない商品は店内の写真で代用し、「商品写真は準備中」と明記しています。メーカー公式画像の無断転載はしていません。</p>
+<p class="lead">初めての方も、商品だけのご購入で来店OKです。お悩みに合わせたカウンセリングもできます。</p>
 <h2 style="margin-top:34px">取り扱い商品</h2>
 <div class="shopfilter" id="shopFilter">
 <p class="sf-row"><input type="search" id="sfSearch" placeholder="商品名・キーワードで探す" aria-label="商品名・キーワードで探す"></p>
 <p class="sf-label">種類から探す</p><p class="sf-chips" id="sfChips"><a href="#" data-f="all" class="on">すべて</a><a href="#" data-f="shampoo">シャンプー</a><a href="#" data-f="treatment">トリートメント</a><a href="#" data-f="outbath">洗い流さないケア</a><a href="#" data-f="scalp">頭皮ケア</a><a href="#" data-f="styling">スタイリング</a><a href="#" data-f="lash">まつげ・眉・メイク</a><a href="#" data-f="other">その他</a></p>
-<p class="sf-label">悩みから探す</p><p class="sf-chips" id="sfTChips"><a href="#" data-t="all" class="on">指定なし</a><a href="#" data-t="dry">パサつき・広がり</a><a href="#" data-t="damage">ダメージ補修</a><a href="#" data-t="scalp">頭皮のベタつき・ニオイ</a><a href="#" data-t="color">カラーの色持ち</a><a href="#" data-t="volume">ハリ・コシ不足</a><a href="#" data-t="kuse">くせ・うねり</a><a href="#" data-t="tsuya">ツヤがほしい</a><a href="#" data-t="lash">まつげ・眉の悩み</a></p><p class="sf-row2"><label>並び替え <select id="sfSort"><option value="reco">おすすめ順</option><option value="low">価格の安い順</option><option value="high">価格の高い順</option></select></label><label class="sf-only"><input type="checkbox" id="sfPriced"> 価格が分かるものだけ</label><span class="sf-count" id="sfCount"></span></p>
+<p class="sf-row2"><label>悩みから探す <select id="sfTrouble"><option value="all">指定なし</option><option value="dry">パサつき・広がり</option><option value="damage">ダメージ補修</option><option value="scalp">頭皮のベタつき・ニオイ</option><option value="color">カラーの色持ち</option><option value="volume">ハリ・コシ不足</option><option value="kuse">くせ・うねり</option><option value="tsuya">ツヤがほしい</option><option value="lash">まつげ・眉の悩み</option></select></label></p><p class="sf-row2"><label>並び替え <select id="sfSort"><option value="reco">おすすめ順</option><option value="low">価格の安い順</option><option value="high">価格の高い順</option></select></label><label class="sf-only"><input type="checkbox" id="sfPriced"> 価格が分かるものだけ</label><span class="sf-count" id="sfCount"></span></p>
 <p class="sf-none" id="sfNone" style="display:none">条件に合う商品がありませんでした</p>
 </div>
 <div class="cards" id="productGrid">
@@ -665,7 +658,7 @@
   var none=document.getElementById('sfNone');
   var cat='all';
   var trouble='all';
-  var tchips=document.querySelectorAll('#sfTChips a');
+  var tsel=document.getElementById('sfTrouble');
   var L={ja:['','件'],en:['',' items'],zh:['',' 件'],ko:['','개']};
   var lang=window.MAHALO_LANG||'ja';
   function apply(){
@@ -693,9 +686,7 @@
   chips.forEach(function(a){ a.addEventListener('click',function(e){ e.preventDefault();
     chips.forEach(function(x){ x.classList.remove('on'); }); a.classList.add('on');
     cat=a.getAttribute('data-f'); apply(); }); });
-  tchips.forEach(function(a){ a.addEventListener('click',function(e){ e.preventDefault();
-    tchips.forEach(function(x){ x.classList.remove('on'); }); a.classList.add('on');
-    trouble=a.getAttribute('data-t'); apply(); }); });
+  tsel.addEventListener('change',function(){ trouble=tsel.value; apply(); });
   search.addEventListener('input',apply);
   sort.addEventListener('change',apply);
   priced.addEventListener('change',apply);
