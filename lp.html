@@ -130,6 +130,13 @@
   }
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"MAHALO トップ","item":"https://momowari.github.io/MAHALO/"},{"@type":"ListItem","position":2,"name":"MAHALO LP","item":"https://momowari.github.io/MAHALO/lp.html"}]}</script>
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "zfhe5xtb5b");
+</script>
 </head>
 <body>
 <div class="wrap">
@@ -253,6 +260,18 @@
       bar.classList.add('show'); shown = true;
     }
   }, {passive:true});
+</script>
+<script>
+document.addEventListener('click', function (e) {
+  var a = e.target.closest ? e.target.closest('a') : null;
+  if (!a || typeof gtag !== 'function') return;
+  var href = a.getAttribute('href') || '';
+  if (href.indexOf('tel:') === 0) {
+    gtag('event', 'tel_click', { link_url: href });
+  } else if (/(lin\.ee|line\.me)/.test(href)) {
+    gtag('event', 'line_click', { link_url: href });
+  }
+});
 </script>
 </body>
 </html>
